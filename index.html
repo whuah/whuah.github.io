@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang=zh>
 <head>
   <meta charset="utf-8">
   
-
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
   
   <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/index.html">
@@ -14,684 +25,539 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
   
   
 <link rel="stylesheet" href="/css/style.css">
 
+  
+  
+  
+  
 <meta name="generator" content="Hexo 4.2.1"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/cofess" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">昵称</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shenzhen, China</small>
       </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
     </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
   </div>
 </header>
-      <div class="outer">
-        <section id="main">
+
   
-    <article id="post-实现与问题汇总" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/02/%E5%AE%9E%E7%8E%B0%E4%B8%8E%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" class="article-date">
-  <time datetime="2020-06-02T10:07:53.033Z" itemprop="datePublished">2020-06-02</time>
-</a>
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/06/02/%E5%AE%9E%E7%8E%B0%E4%B8%8E%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" class="title">实现与问题汇总</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-06-02T10:07:53.033Z" itemprop="datePublished">2020-06-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/06/02/%E6%8A%80%E6%9C%AF%E6%8A%80%E8%83%BD/" class="title">技术技能</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-06-02T10:07:53.026Z" itemprop="datePublished">2020-06-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/06/02/%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E20200430/" class="title">函数使用说明20200430</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-06-02T10:07:53.019Z" itemprop="datePublished">2020-06-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/06/02/tensorflow-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D,%E6%9C%89%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E8%B6%B3%E5%A4%9F%E4%BA%86/" class="title">tensorflow-梯度下降,有这一篇就足够了</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-06-02T10:07:53.010Z" itemprop="datePublished">2020-06-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/06/02/BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/" class="title">BP神经网络学习</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-06-02T10:07:52.991Z" itemprop="datePublished">2020-06-02</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
     
   </div>
-  <div class="article-inner">
+</aside>
+
+  
+  <main class="main" role="main">
+  
+  <div class="content article-list">
     
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
     
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/06/02/%E5%AE%9E%E7%8E%B0%E4%B8%8E%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/">实现与问题汇总</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="20200323"><a href="#20200323" class="headerlink" title="20200323"></a>20200323</h4><ol>
-<li><strong>数据降维，比例，高低占比。是否影响精度。</strong></li>
-</ol>
-<ul>
-<li>影响训练结果。数据多的特征容易占据主导地位。</li>
-</ul>
-<ol start="2">
-<li><p><strong>师弟的BP神经网络</strong></p>
-</li>
-<li><p><strong>别人做过的，信号分成不同分量。钢管测量腐蚀，小波重组。</strong></p>
-</li>
-<li><p><strong>conv1D的情况</strong></p>
-</li>
-<li><p><strong>85%正确率是什么情况。汽车全对，人全错？混淆矩阵，输出看一下情况。</strong></p>
-</li>
-</ol>
-<ul>
-<li>85是预测一边倒的情况</li>
-</ul>
-<ol start="6">
-<li><strong>工程使用。如何预测。</strong></li>
-</ol>
-<ul>
-<li>可视化、训练模型直接使用，CNNtest.py实现</li>
-</ul>
-<ol start="7">
-<li><strong>预测使用的时候，正式使用的时候，要去掉dropout层。那么这是自动去掉还是需要手动去掉？keras的两种模式自动切换？(done)</strong></li>
-</ol>
-<ul>
-<li>可视化.md解决</li>
-</ul>
-<ol start="8">
-<li><p><strong>数据集，高频成分是否需要考虑，影响？</strong></p>
-</li>
-<li><p><strong>BN层。基本知识和应用(done。具体细节还需要考虑)</strong></p>
-</li>
-<li><p>==<strong>置信概率。多少作出判断。</strong>==</p>
-<p>判决机制是什么？如何做出判断？</p>
-</li>
-<li><p><strong>现有的训练，如何继续推进，往实际应用方向前进。</strong></p>
-</li>
-<li><p><strong>写文章</strong></p>
-</li>
-<li><p><strong>学习高精尖技术，结合libs学习。</strong></p>
-</li>
-</ol>
-<h4 id="20200328"><a href="#20200328" class="headerlink" title="20200328"></a><strong>20200328</strong></h4><ul>
-<li><input disabled="" type="checkbox"> 加入马的数据，第三个模式。</li>
-<li><input disabled="" type="checkbox"> BP神经网络的实现，纯手工制作</li>
-<li><input disabled="" type="checkbox"> BP神经网络，调用tensorflow。</li>
-<li><input disabled="" type="checkbox"> 采用预训练模型，如何使用，如何冻结</li>
-<li><input disabled="" type="checkbox"> 如何调参数、</li>
-<li><input disabled="" type="checkbox"> 局部最优</li>
-<li><input disabled="" type="checkbox"> </li>
-</ul>
-<p>最简单的训练终止条件为设置最大迭代次数， 如将数据集迭代1000次后终止训练.</p>
-<ul>
-<li><p>单纯的设置最大迭代次数不能保证训练结果的精确度， 更好的办法是使用损失函数(loss function)作为终止训练的依据.</p>
-</li>
-<li><p>损失函数可以选用输出层各节点的方差:L=∑j(Tj−Oj)2</p>
-</li>
-<li><p>为了避免神经网络进行无意义的迭代， 我们通常在训练数据集中抽出一部分用作校验.当预测误差高于阈值时提前终止训练.</p>
-</li>
-</ul>
-<h4 id="20200401"><a href="#20200401" class="headerlink" title="20200401"></a>20200401</h4><ol>
-<li>python 对于列表的操作，如果一个列表位数已经确定且存在，不能再对他赋予其他维度的值。</li>
-<li>对于delete矩阵的最后一列或者两列的操作，要搞清楚是否有效。对于reshape出来的矩阵。</li>
-</ol>
-<h4 id="读取文件的注意事项"><a href="#读取文件的注意事项" class="headerlink" title="读取文件的注意事项"></a>读取文件的注意事项</h4><ul>
-<li><p>读取H5文件的时候，读取出来的是数据，还是一个格式。读取标签的时候，读取出来的不是具体的数据，需要把数据复制出俩==[:]==这种复制法方法很实用。还有一种就是循环读取。等。</p>
-</li>
-<li><p>安装keras2.1.3，终端安装</p>
-</li>
-<li><p>安装绘制图seaborn画图</p>
-</li>
-<li><pre><code>Installing collected packages: pytz, pandas, seaborn
-Successfully installed pandas-1.0.3 pytz-2019.3 seaborn-0.10.0
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- sklearn安装</span><br><span class="line"></span><br><span class="line">- 专门做输出 统计的库</span><br><span class="line"></span><br><span class="line">- 归一化函数，很牛皮的。</span><br><span class="line"></span><br><span class="line">-</span><br></pre></td></tr></table></figure>
-from sklearn.preprocessing import normalize
-data = np.array([
-    [1000, 10, 0.5],
-    [765, 5, 0.35],
-    [800, 7, 0.09], ])
-data = normalize(data, axis=1, norm=&apos;max&apos;)
-print(data)
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 置信概率</span><br><span class="line"></span><br><span class="line">- 结合labview</span><br><span class="line"></span><br><span class="line">- 实验源头数据测量，数据处理。先定位位置，远近信号差异大，远处数据多，占据数据多，主导影响大。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### 20200422</span><br><span class="line"></span><br><span class="line">- 部署服务器：如何把一台电脑变成服务器，所有人都能访问</span><br><span class="line">- 集群是什么意思，有什么用。那些软件都是什么？</span><br><span class="line">- centos学习，Linux，Ubuntu</span><br><span class="line">- 虚拟机vmvare，docer等等。</span><br><span class="line">- 远程连接，teamviewer，</span><br><span class="line">- 不断参加竞赛，做各种竞赛题目，和别人比赛</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### 20200429pytorch函数</span><br><span class="line"></span><br><span class="line">1. pytorch使用的数据结构是tensor类型。np或者list转换tensor有三个手段</span><br><span class="line"></span><br><span class="line">   &#96;&#96;&#96;python</span><br><span class="line">   # var1 &#x3D; x1.numpy()</span><br><span class="line">   # var2 &#x3D; torch.from_numpy(a)</span><br><span class="line">   # Variablie不可以转变类型</span><br><span class="line">   #dataset可以转换数据类型</span><br><span class="line">   </span><br><span class="line">   区别tensor中类型转化，.type(torch.FloatTensor)</span><br></pre></td></tr></table></figure></code></pre></li>
-</ul>
-<ol start="2">
-<li><p>loss函数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loss = loss_func(output, batch_y)<span class="comment">#计算误差</span></span><br></pre></td></tr></table></figure>
-
-<p>#会自动化为one-hot类型,所以batch_y必须是单数字标签<br>#输入input要求为logit（模型输出且不经过softmax），target为该样本对应的类别, tensorlong类型（int64位）</p>
-</li>
-<li><p>数据集封装及batch</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">image_data_label &#x3D; data.DataLoader(dataset&#x3D;image_data_label, batch_size&#x3D;BATCH_SIZE, shuffle&#x3D;False)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>绘制混淆矩阵</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">con_mat = confusion_matrix(truelabel, predictions)</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="5">
-<li>CNN网络conv1D是用于处理文本数据的。</li>
-<li>CNN灰度图，是单通道的，可以在这里使用</li>
-<li>另给一种有效的处理方式：多源传感数据融合，前端灰度图像、TOF图像、红外图像、多光谱图像、激光点云转化的灰度图、DEM高程图等，带有深度信息或其他波段的光学信息图像作为通道输入，这样三个通道分别学习不同的信息，可能更有效一些。</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">_________________________________________________________________</span><br><span class="line">Layer (type)                 Output Shape              Param <span class="comment">#   </span></span><br><span class="line">=================================================================</span><br><span class="line">conv2d_1 (Conv2D)            (<span class="literal">None</span>, <span class="number">50</span>, <span class="number">100</span>, <span class="number">32</span>)       <span class="number">896</span>       </span><br><span class="line">_________________________________________________________________</span><br><span class="line">max_pooling2d_1 (MaxPooling2 (<span class="literal">None</span>, <span class="number">25</span>, <span class="number">50</span>, <span class="number">32</span>)        <span class="number">0</span>         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dropout_1 (Dropout)          (<span class="literal">None</span>, <span class="number">25</span>, <span class="number">50</span>, <span class="number">32</span>)        <span class="number">0</span>         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_2 (Conv2D)            (<span class="literal">None</span>, <span class="number">25</span>, <span class="number">50</span>, <span class="number">64</span>)        <span class="number">18496</span>     </span><br><span class="line">_________________________________________________________________</span><br><span class="line">max_pooling2d_2 (MaxPooling2 (<span class="literal">None</span>, <span class="number">12</span>, <span class="number">25</span>, <span class="number">64</span>)        <span class="number">0</span>         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dropout_2 (Dropout)          (<span class="literal">None</span>, <span class="number">12</span>, <span class="number">25</span>, <span class="number">64</span>)        <span class="number">0</span>         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_3 (Conv2D)            (<span class="literal">None</span>, <span class="number">12</span>, <span class="number">25</span>, <span class="number">128</span>)       <span class="number">73856</span>     </span><br><span class="line">_________________________________________________________________</span><br><span class="line">max_pooling2d_3 (MaxPooling2 (<span class="literal">None</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">128</span>)        <span class="number">0</span>         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dropout_3 (Dropout)          (<span class="literal">None</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">128</span>)        <span class="number">0</span>         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">flatten_1 (Flatten)          (<span class="literal">None</span>, <span class="number">9216</span>)              <span class="number">0</span>         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_1 (Dense)              (<span class="literal">None</span>, <span class="number">128</span>)               <span class="number">1179776</span>   </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_2 (Dense)              (<span class="literal">None</span>, <span class="number">64</span>)                <span class="number">8256</span>      </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_3 (Dense)              (<span class="literal">None</span>, <span class="number">32</span>)                <span class="number">2080</span>      </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_4 (Dense)              (<span class="literal">None</span>, <span class="number">3</span>)                 <span class="number">99</span>        </span><br><span class="line">=================================================================</span><br><span class="line">Total params: <span class="number">1</span>,<span class="number">283</span>,<span class="number">459</span></span><br><span class="line">Trainable params: <span class="number">1</span>,<span class="number">283</span>,<span class="number">459</span></span><br><span class="line">Non-trainable params: <span class="number">0</span></span><br><span class="line">_________________________________________________________________</span><br><span class="line"><span class="literal">None</span></span><br><span class="line">Train on <span class="number">5029</span> samples, validate on <span class="number">51</span> samples</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> h5py</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">trainfile = h5py.File(<span class="string">'data10/test.h5'</span>,<span class="string">'r'</span>)</span><br><span class="line"><span class="comment"># testfile = h5py.File('test.h5','r')</span></span><br><span class="line">image_data = []</span><br><span class="line">image_data_label = []</span><br><span class="line">image_data = trainfile[<span class="string">'test'</span>][:] <span class="comment"># 读取数据，读取data和label</span></span><br><span class="line"><span class="comment"># test_data = testfile['test']</span></span><br><span class="line">image_data_label = trainfile[<span class="string">'test_label'</span>][:]</span><br><span class="line"><span class="comment"># test_data_label = testfile['test_label']</span></span><br><span class="line">trainfile.close()</span><br><span class="line"></span><br><span class="line">print(image_data)</span><br><span class="line">print(image_data_label)</span><br><span class="line"></span><br><span class="line">randnum = np.random.randint(<span class="number">0</span>,<span class="number">100</span>)</span><br><span class="line">np.random.seed(randnum)</span><br><span class="line">np.random.shuffle(image_data)</span><br><span class="line">np.random.seed(randnum)</span><br><span class="line">np.random.shuffle(image_data_label)</span><br><span class="line"></span><br><span class="line">print(image_data)</span><br><span class="line">print(image_data_label)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">b = [1, 2, 3, 4, 5, 6 , 7, 8 ,9]</span></span><br><span class="line"><span class="string">a  = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']</span></span><br><span class="line"><span class="string">c = list(zip(a, b))</span></span><br><span class="line"><span class="string">print(c)</span></span><br><span class="line"><span class="string">random.shuffle(c)</span></span><br><span class="line"><span class="string">print(c)</span></span><br><span class="line"><span class="string">a, b = zip(*c)</span></span><br><span class="line"><span class="string">print(a)</span></span><br><span class="line"><span class="string">print(b)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/02/%E5%AE%9E%E7%8E%B0%E4%B8%8E%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" data-id="ckaxrnx43000430v4h2i52017" class="article-share-link">Share</a>
-      
-      
-    </footer>
   </div>
   
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/06/02/%E5%AE%9E%E7%8E%B0%E4%B8%8E%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" class="article-date">
+	  <time datetime="2020-06-02T10:07:53.033Z" itemprop="datePublished">6月 2</time>
+	</a>
+</span>
+    
+    
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/06/02/%E5%AE%9E%E7%8E%B0%E4%B8%8E%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/#comments" class="article-comment-link">评论</a></span>
+    
+  </p>
 </article>
 
-
-  
-    <article id="post-技术技能" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/02/%E6%8A%80%E6%9C%AF%E6%8A%80%E8%83%BD/" class="article-date">
-  <time datetime="2020-06-02T10:07:53.026Z" itemprop="datePublished">2020-06-02</time>
-</a>
     
-  </div>
-  <div class="article-inner">
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/06/02/%E6%8A%80%E6%9C%AF%E6%8A%80%E8%83%BD/">技术技能</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="tensorflow中协调器-tf-train-Coordinator-和入队线程启动器-tf-train-start-queue-runners"><a href="#tensorflow中协调器-tf-train-Coordinator-和入队线程启动器-tf-train-start-queue-runners" class="headerlink" title="tensorflow中协调器 tf.train.Coordinator 和入队线程启动器 tf.train.start_queue_runners"></a>tensorflow中协调器 tf.train.Coordinator 和入队线程启动器 tf.train.start_queue_runners</h1><p>tinymce：django-tinymce</p>
-<p>Django：2.2</p>
-<p>tensorflow-gpu：2.1.3？</p>
-<p>xlwt：Excel表格操作对象</p>
-<p>pandas:数据操作</p>
-<p>2018年04月01日 18:51:57</p>
-<p>阅读数：1285</p>
-<p>TensorFlow的Session对象是支持多线程的，可以在同一个会话（Session）中创建多个线程，并行执行。在Session中的所有线程都必须能被同步终止，异常必须能被正确捕获并报告，会话终止的时候， 队列必须能被正确地关闭。</p>
-<p>TensorFlow提供了两个类来实现对Session中多线程的管理：tf.Coordinator和 tf.QueueRunner，这两个类往往一起使用。</p>
-<p>Coordinator类用来管理在Session中的多个线程，可以用来同时停止多个工作线程并且向那个在等待所有工作线程终止的程序报告异常，该线程捕获到这个异常之后就会终止所有线程。使用 tf.train.Coordinator()来创建一个线程管理器（协调器）对象。</p>
-<p>QueueRunner类用来启动tensor的入队线程，可以用来启动多个工作线程同时将多个tensor（训练数据）推送入文件名称队列中，具体执行函数是 tf.train.start_queue_runners ， 只有调用 tf.train.start_queue_runners 之后，才会真正把tensor推入内存序列中，供计算单元调用，否则会由于内存序列为空，数据流图会处于一直等待状态。</p>
-<p>tf中的数据读取机制如下图：</p>
-<p><img src="https://img-blog.csdn.net/20180401184032574" alt="img"></p>
-<ol>
-<li>调用 tf.train.slice_input_producer，从 本地文件里抽取tensor，准备放入Filename Queue（文件名队列）中;</li>
-<li>调用 tf.train.batch，从文件名队列中提取tensor，使用单个或多个线程，准备放入文件队列;</li>
-<li>调用 tf.train.Coordinator() 来创建一个线程协调器，用来管理之后在Session中启动的所有线程;</li>
-<li>调用tf.train.start_queue_runners, 启动入队线程，由多个或单个线程，按照设定规则，把文件读入Filename Queue中。函数返回线程ID的列表，一般情况下，系统有多少个核，就会启动多少个入队线程（入队具体使用多少个线程在tf.train.batch中定义）;</li>
-<li>文件从 Filename Queue中读入内存队列的操作不用手动执行，由tf自动完成;</li>
-<li>调用sess.run 来启动数据出列和执行计算;</li>
-<li>使用 coord.should_stop()来查询是否应该终止所有线程，当文件队列（queue）中的所有文件都已经读取出列的时候，会抛出一个 OutofRangeError 的异常，这时候就应该停止Sesson中的所有线程了;</li>
-<li>使用coord.request_stop()来发出终止所有线程的命令，使用coord.join(threads)把线程加入主线程，等待threads结束。</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_Batch</span><span class="params">(data, label, batch_size)</span>:</span></span><br><span class="line">    print(data.shape, label.shape)</span><br><span class="line">    input_queue = tf.train.slice_input_producer([data, label], num_epochs=<span class="number">2</span>, shuffle=<span class="literal">True</span>, capacity=<span class="number">32</span>)</span><br><span class="line">    x_batch, y_batch = tf.train.batch(input_queue, batch_size=batch_size, num_threads=<span class="number">1</span>, capacity=<span class="number">32</span>,</span><br><span class="line">                                      allow_smaller_final_batch=<span class="literal">False</span>)</span><br><span class="line">    <span class="keyword">return</span> x_batch, y_batch</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    x1 = tf.constant([[<span class="number">1.0</span>, <span class="number">2.</span>, <span class="number">3.</span>], [<span class="number">4.</span>, <span class="number">5.</span>, <span class="number">6.</span>],[<span class="number">7.</span>, <span class="number">8.</span>,<span class="number">9.</span>], [<span class="number">10.</span>, <span class="number">11.</span>,<span class="number">12.</span>]])</span><br><span class="line">    y1 = tf.constant([[<span class="number">0.5</span>, <span class="number">1.5</span>, <span class="number">2.5</span>], [<span class="number">3.5</span>, <span class="number">4.5</span>, <span class="number">5.5</span>],[<span class="number">6.5</span>, <span class="number">7.5</span>, <span class="number">8.5</span>], [<span class="number">9.5</span>, <span class="number">10.5</span>, <span class="number">11.5</span>]])</span><br><span class="line"></span><br><span class="line">    x_batch, y_batch = get_Batch(x1, y1, <span class="number">2</span>)</span><br><span class="line">    c = x_batch + y_batch</span><br><span class="line">    <span class="comment">#初始化参数</span></span><br><span class="line">    sess.run(tf.global_variables_initializer())</span><br><span class="line">    sess.run(tf.local_variables_initializer())</span><br><span class="line">    <span class="comment"># 开启协调器</span></span><br><span class="line">    coord = tf.train.Coordinator()</span><br><span class="line">    <span class="comment"># 使用start_queue_runners 启动队列填充</span></span><br><span class="line">    threads = tf.train.start_queue_runners(sess, coord)</span><br><span class="line">    epoch = <span class="number">0</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">not</span> coord.should_stop():</span><br><span class="line">            <span class="comment"># 获取训练用的每一个batch中batch_size个样本和标签</span></span><br><span class="line">            data, label = sess.run([x_batch, y_batch])</span><br><span class="line">            c1 = sess.run(c)</span><br><span class="line"></span><br><span class="line">            print(data,<span class="string">'\n'</span>,label)</span><br><span class="line">            print(c1)</span><br><span class="line">    <span class="keyword">except</span> tf.errors.OutOfRangeError:  <span class="comment"># num_epochs 次数用完会抛出此异常</span></span><br><span class="line">        print(<span class="string">"---Train end---"</span>)</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        <span class="comment"># 协调器coord发出所有线程终止信号</span></span><br><span class="line">        coord.request_stop()</span><br><span class="line">        print(<span class="string">'---Programm end---'</span>)</span><br><span class="line">    coord.join(threads)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>(4, 3) (4, 3)<br>[[1. 2. 3.]<br> [7. 8. 9.]]<br> [[0.5 1.5 2.5]<br> [6.5 7.5 8.5]]<br>[[ 7.5  9.5 11.5]<br> [19.5 21.5 23.5]]<br>[[4. 5. 6.]<br> [7. 8. 9.]]<br> [[3.5 4.5 5.5]<br> [6.5 7.5 8.5]]<br>[[ 1.5  3.5  5.5]<br> [19.5 21.5 23.5]]<br>—Train end—<br>—Programm end—</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/02/%E6%8A%80%E6%9C%AF%E6%8A%80%E8%83%BD/" data-id="ckaxrnx44000530v46fdk0drq" class="article-share-link">Share</a>
-      
-      
-    </footer>
   </div>
   
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/06/02/%E6%8A%80%E6%9C%AF%E6%8A%80%E8%83%BD/" class="article-date">
+	  <time datetime="2020-06-02T10:07:53.026Z" itemprop="datePublished">6月 2</time>
+	</a>
+</span>
+    
+    
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/06/02/%E6%8A%80%E6%9C%AF%E6%8A%80%E8%83%BD/#comments" class="article-comment-link">评论</a></span>
+    
+  </p>
 </article>
 
-
-  
-    <article id="post-函数使用说明20200430" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/02/%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E20200430/" class="article-date">
-  <time datetime="2020-06-02T10:07:53.019Z" itemprop="datePublished">2020-06-02</time>
-</a>
     
-  </div>
-  <div class="article-inner">
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/06/02/%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E20200430/">函数使用说明20200430</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<h4 id="机器学习记录"><a href="#机器学习记录" class="headerlink" title="机器学习记录"></a>机器学习记录</h4></blockquote>
-<ol>
-<li>学习神经网络的时候，网上的数据集已经分割成了batch，训练的时候直接使用batch.next()就可以获取batch，但是有的时候需要使用自己的数据集，然而自己的数据集不是batch形式，就需要将其转换为batch形式，本文将介绍一个将数据打包成batch的方法。</li>
-</ol>
-<ul>
-<li><p><strong>tf.slice_input_producer（）</strong></p>
-</li>
-<li><p>```<br>tf.slice_input_producer(tensor_list, num_epochs=None, shuffle=True, seed=None,</p>
-<pre><code>capacity=32, shared_name=None, name=None)</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 从输入的tensor_list按要求抽取一个tensor放入文件名队列，下面解释下各个参数：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;python</span><br><span class="line">import torch</span><br><span class="line">import torch.nn as nn</span><br><span class="line">from torch.autograd import Variable</span><br><span class="line">import torch.utils.data as data</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import torchvision  #数据库模块</span><br><span class="line">import h5py</span><br><span class="line">import numpy as np</span><br><span class="line">from keras.utils import to_categorical</span><br><span class="line"></span><br><span class="line">torch.manual_seed(1) #reproducible</span><br><span class="line">#Hyper Parameters</span><br><span class="line">EPOCH &#x3D; 1</span><br><span class="line">BATCH_SIZE &#x3D; 50</span><br><span class="line">LR &#x3D; 0.001</span><br><span class="line">data_folder &#x3D; &#39;data1&#x2F;&#39;</span><br><span class="line">traindata_path &#x3D; data_folder + &#39;train.h5&#39;</span><br><span class="line">testdata_path &#x3D; data_folder + &#39;test.h5&#39;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">train_data &#x3D; torchvision.datasets.MNIST(</span><br><span class="line">    root&#x3D;&#39;&#x2F;mnist&#x2F;&#39;, #保存位置</span><br><span class="line">    train&#x3D;True, #training set</span><br><span class="line">    transform&#x3D;torchvision.transforms.ToTensor(), #converts a PIL.Image or numpy.ndarray</span><br><span class="line">                                        #to torch.FloatTensor(C*H*W) in range(0.0,1.0)</span><br><span class="line">    download&#x3D;True</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">test_data &#x3D; torchvision.datasets.MNIST(root&#x3D;&#39;&#x2F;MNIST&#x2F;&#39;)</span><br><span class="line">#如果是普通的Tensor数据，想使用torch_dataset &#x3D; data.TensorDataset(data_tensor&#x3D;x, target_tensor&#x3D;y)</span><br><span class="line">#将Tensor转换成torch能识别的dataset</span><br><span class="line">#批训练， 50 samples, 1 channel, 28*28, (50, 1, 28 ,28)</span><br><span class="line">train_loader &#x3D; data.DataLoader(dataset&#x3D;train_data, batch_size&#x3D;BATCH_SIZE, shuffle&#x3D;True)</span><br><span class="line"></span><br><span class="line">test_x &#x3D; Variable(torch.unsqueeze(test_data.test_data, dim&#x3D;1), volatile&#x3D;True).type(torch.FloatTensor)[:2000]&#x2F;255.</span><br><span class="line">test_y &#x3D; test_data.test_lables[:2000]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def data_process(image_data,test_data,image_data_label,test_data_label,truelabel):</span><br><span class="line">    trainfile &#x3D; h5py.File(traindata_path,&#39;r&#39;)</span><br><span class="line">    testfile &#x3D; h5py.File(testdata_path,&#39;r&#39;)</span><br><span class="line"></span><br><span class="line">    image_data &#x3D; trainfile[&#39;test&#39;]#读取数据，读取data和label</span><br><span class="line">    test_data &#x3D; testfile[&#39;test&#39;]</span><br><span class="line">    image_data_label &#x3D; trainfile[&#39;test_label&#39;]</span><br><span class="line">    test_data_label &#x3D; testfile[&#39;test_label&#39;]</span><br><span class="line"></span><br><span class="line">    image_data &#x3D; image_data[:] &#x2F; 255 # normalize to 0~1</span><br><span class="line">    test_data &#x3D; test_data[:] &#x2F; 255#经过验证，可以。此时的data已经转变为列表了</span><br><span class="line">    image_data_label &#x3D; np.array(image_data_label[:])</span><br><span class="line">    test_data_label &#x3D; np.array(test_data_label[:])</span><br><span class="line">    #转换label的格式，转化为int类型，后面才可以用作index(1.前面标签应从0开始 2.现在手动转换)</span><br><span class="line">    image_data_label &#x3D; image_data_label.astype(&#39;int&#39;)</span><br><span class="line">    test_data_label &#x3D; test_data_label.astype(&#39;int&#39;)</span><br><span class="line">    truelabel &#x3D; test_data_label</span><br><span class="line"></span><br><span class="line">    image_data_label &#x3D; to_categorical(image_data_label)# convert to one-hot vectors</span><br><span class="line">    test_data_label &#x3D; to_categorical(test_data_label)</span><br><span class="line">    trainfile.close()</span><br><span class="line">    testfile.close()</span><br><span class="line">    return image_data,test_data,image_data_label,test_data_label,truelabel</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class CNN(nn.Module):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        super(CNN, self).__init__()</span><br><span class="line">        self.conv1 &#x3D; nn.Sequential(  # input shape (1,28,28)</span><br><span class="line">            nn.Conv2d(in_channels&#x3D;1,  # input height</span><br><span class="line">                      out_channels&#x3D;16,  # n_filter</span><br><span class="line">                      kernel_size&#x3D;5,  # filter size</span><br><span class="line">                      stride&#x3D;1,  # filter step</span><br><span class="line">                      padding&#x3D;2  # con2d出来的图片大小不变</span><br><span class="line">                      ),  # output shape (16,28,28)</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            nn.MaxPool2d(kernel_size&#x3D;2)  # 2x2采样，output shape (16,14,14)</span><br><span class="line"></span><br><span class="line">        )</span><br><span class="line">        self.conv2 &#x3D; nn.Sequential(nn.Conv2d(16, 32, 5, 1, 2),  # output shape (32,7,7)</span><br><span class="line">                                   nn.ReLU(),</span><br><span class="line">                                   nn.MaxPool2d(2))</span><br><span class="line">        self.out &#x3D; nn.Linear(32 * 7 * 7, 10)</span><br><span class="line"></span><br><span class="line">    def forward(self, x):</span><br><span class="line">        x &#x3D; self.conv1(x)</span><br><span class="line">        x &#x3D; self.conv2(x)</span><br><span class="line">        x &#x3D; x.view(x.size(0), -1)  # flat (batch_size, 32*7*7)</span><br><span class="line">        output &#x3D; self.out(x)</span><br><span class="line">        return output</span><br><span class="line"></span><br><span class="line">cnn &#x3D; CNN()</span><br><span class="line">print(cnn)</span><br><span class="line"></span><br><span class="line">#optimizer</span><br><span class="line">optimizer &#x3D; torch.optim.Adam(cnn.parameters(), lr&#x3D;LR)</span><br><span class="line"></span><br><span class="line">#loss_fun</span><br><span class="line">loss_func &#x3D; nn.CrossEntropyLoss()</span><br><span class="line"></span><br><span class="line">#training loop</span><br><span class="line">for epoch in range(EPOCH):</span><br><span class="line">    for i, (x, y) in enumerate(train_loader):</span><br><span class="line">        batch_x &#x3D; Variable(x)</span><br><span class="line">        batch_y &#x3D; Variable(y)</span><br><span class="line">        #输入训练数据</span><br><span class="line">        output &#x3D; cnn(batch_x)</span><br><span class="line">        #计算误差</span><br><span class="line">        loss &#x3D; loss_func(output, batch_y)</span><br><span class="line">        #清空上一次梯度</span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        #误差反向传递</span><br><span class="line">        loss.backward()</span><br><span class="line">        #优化器参数更新</span><br><span class="line">        optimizer.step()</span><br><span class="line"></span><br><span class="line">test_output &#x3D;cnn(test_x[:10])</span><br><span class="line">pred_y &#x3D; torch.max(test_output,1)[1].data.numpy().squeeze()</span><br><span class="line">print(pred_y, &#39;prediction number&#39;)</span><br><span class="line">print(test_y[:10])</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/02/%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E20200430/" data-id="ckaxrnx41000230v4cjo050cr" class="article-share-link">Share</a>
-      
-      
-    </footer>
   </div>
   
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/06/02/%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E20200430/" class="article-date">
+	  <time datetime="2020-06-02T10:07:53.019Z" itemprop="datePublished">6月 2</time>
+	</a>
+</span>
+    
+    
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/06/02/%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E20200430/#comments" class="article-comment-link">评论</a></span>
+    
+  </p>
 </article>
 
-
-  
-    <article id="post-tensorflow-梯度下降,有这一篇就足够了" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/02/tensorflow-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D,%E6%9C%89%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E8%B6%B3%E5%A4%9F%E4%BA%86/" class="article-date">
-  <time datetime="2020-06-02T10:07:53.010Z" itemprop="datePublished">2020-06-02</time>
-</a>
     
-  </div>
-  <div class="article-inner">
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/06/02/tensorflow-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D,%E6%9C%89%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E8%B6%B3%E5%A4%9F%E4%BA%86/">tensorflow-梯度下降,有这一篇就足够了</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="tensorflow-梯度下降-有这一篇就足够了"><a href="#tensorflow-梯度下降-有这一篇就足够了" class="headerlink" title="tensorflow-梯度下降,有这一篇就足够了"></a><a href="https://segmentfault.com/a/1190000011994447" target="_blank" rel="noopener">tensorflow-梯度下降,有这一篇就足够了</a></h1><p>更新于 2018-07-03  约 20 分钟</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近机器学习越来越火了，前段时间斯丹福大学副教授吴恩达都亲自录制了关于<code>Deep Learning Specialization</code>的教程，在国内掀起了巨大的学习热潮。本着不被时代抛弃的念头，自己也开始研究有关机器学习的知识。都说机器学习的学习难度非常大，但不亲自尝试一下又怎么会知道其中的奥妙与乐趣呢？只有不断的尝试才能找到最适合自己的道路。</p>
-<p>请容忍我上述的自我煽情，下面进入主题。这篇文章主要对机器学习中所遇到的<code>GradientDescent</code>(梯度下降)进行全面分析，相信你看了这篇文章之后，对<code>GradientDescent</code>将彻底弄明白其中的原理。</p>
-<h1 id="梯度下降的概念"><a href="#梯度下降的概念" class="headerlink" title="梯度下降的概念"></a>梯度下降的概念</h1><p><code>梯度下降法</code>是一个一阶最优化算法，通常也称为最速下降法。要使用梯度下降法找到一个函数的局部极小值，必须向函数上当前点对于梯度（或者是近似梯度）的反方向的规定步长距离点进行迭代搜索。所以梯度下降法可以帮助我们求解某个函数的极小值或者最小值。对于n维问题就最优解，梯度下降法是最常用的方法之一。下面通过梯度下降法的<code>前生今世</code>来进行详细推导说明。</p>
-<h1 id="梯度下降法的前世"><a href="#梯度下降法的前世" class="headerlink" title="梯度下降法的前世"></a>梯度下降法的前世</h1><p>首先从简单的开始，看下面的一维函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f(x) &#x3D; x^3 + 2 * x - 3</span><br></pre></td></tr></table></figure>
-
-<img src="https://segmentfault.com/img/bVYurc?w=800&amp;h=800" alt="clipboard.png" style="zoom:33%;" />
-
-<p>在数学中如果我们要求<code>f(x) = 0</code>处的解，我们可以通过如下误差等式来求得：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error &#x3D; (f(x) - 0)^2</span><br></pre></td></tr></table></figure>
-
-<p>当<code>error</code>趋近于最小值时，也就是<code>f(x) = 0</code>处<code>x</code>的解，我们也可以通过图来观察：</p>
-<img src="https://segmentfault.com/img/bVYurg?w=800&amp;h=800" alt="clipboard.png" style="zoom:33%;" />
-
-<p>通过这函数图，我们可以非常直观的发现，要想求得该函数的最小值，只要将<code>x</code>指定为函数图的最低谷。这在高中我们就已经掌握了该函数的最小值解法。我们可以通过对该函数进行求导（即斜率）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">derivative(x) &#x3D; 6 * x^5 + 16 * x^3 - 18 * x^2 + 8 * x - 12</span><br></pre></td></tr></table></figure>
-
-<p>如果要得到最小值，只需令<code>derivative(x) = 0</code>，即<code>x = 1</code>。同时我们结合图与导函数可以知道：</p>
-<ul>
-<li>当<code>x &lt; 1</code>时，<code>derivative &lt; 0</code>，斜率为负的；</li>
-<li>当<code>x &gt; 1</code>时，<code>derivative &gt; 0</code>，斜率为正的；</li>
-<li>当<code>x 无限接近 1</code>时，<code>derivative也就无限=0</code>，斜率为零。</li>
-</ul>
-<p>通过上面的结论，我们可以使用如下表达式来代替<code>x</code>在函数中的移动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x &#x3D; x - reate * derivative</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><em>当斜率为负的时候，<code>x</code>增大，当斜率为正的时候，<code>x</code>减小；因此<code>x</code>总是会向着低谷移动，使得<code>error</code>最小，从而求得<code>f(x) = 0</code>处的解。其中的<code>rate</code>代表<code>x</code>逆着导数方向移动的距离，<code>rate</code>越大，<code>x</code>每次就移动的越多。反之移动的越少。</em></p>
-</blockquote>
-<p>这是针对简单的函数，我们可以非常直观的求得它的导函数。为了应对复杂的函数，我们可以通过使用求导函数的定义来表达导函数:若函数<code>f(x)</code>在点<code>x0</code>处可导，那么有如下定义：</p>
-<p><img src="https://segmentfault.com/img/bVYuru?w=431&h=54" alt="clipboard.png"></p>
-<p>上面是都是公式推导，下面通过代码来实现，下面的代码都是使用<code>python</code>进行实现。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def f(x):</span><br><span class="line">...     return x**3 + 2 * x - 3</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; def error(x):</span><br><span class="line">...     return (f(x) - 0)**2</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; def gradient_descent(x):</span><br><span class="line">...     delta &#x3D; 0.00000001</span><br><span class="line">...     derivative &#x3D; (error(x + delta) - error(x)) &#x2F; delta</span><br><span class="line">...     rate &#x3D; 0.01</span><br><span class="line">...     return x - rate * derivative</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; x &#x3D; 0.8</span><br><span class="line">&gt;&gt;&gt; for i in range(50):</span><br><span class="line">...     x &#x3D; gradient_descent(x)</span><br><span class="line">...     print(&#39;x &#x3D; &#123;:6f&#125;, f(x) &#x3D; &#123;:6f&#125;&#39;.format(x, f(x)))</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<p>执行上面程序，我们就能得到如下结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">x &#x3D; 0.869619, f(x) &#x3D; -0.603123</span><br><span class="line">x &#x3D; 0.921110, f(x) &#x3D; -0.376268</span><br><span class="line">x &#x3D; 0.955316, f(x) &#x3D; -0.217521</span><br><span class="line">x &#x3D; 0.975927, f(x) &#x3D; -0.118638</span><br><span class="line">x &#x3D; 0.987453, f(x) &#x3D; -0.062266</span><br><span class="line">x &#x3D; 0.993586, f(x) &#x3D; -0.031946</span><br><span class="line">x &#x3D; 0.996756, f(x) &#x3D; -0.016187</span><br><span class="line">x &#x3D; 0.998369, f(x) &#x3D; -0.008149</span><br><span class="line">x &#x3D; 0.999182, f(x) &#x3D; -0.004088</span><br><span class="line">x &#x3D; 0.999590, f(x) &#x3D; -0.002048</span><br><span class="line">x &#x3D; 0.999795, f(x) &#x3D; -0.001025</span><br><span class="line">x &#x3D; 0.999897, f(x) &#x3D; -0.000513</span><br><span class="line">x &#x3D; 0.999949, f(x) &#x3D; -0.000256</span><br><span class="line">x &#x3D; 0.999974, f(x) &#x3D; -0.000128</span><br><span class="line">x &#x3D; 0.999987, f(x) &#x3D; -0.000064</span><br><span class="line">x &#x3D; 0.999994, f(x) &#x3D; -0.000032</span><br><span class="line">x &#x3D; 0.999997, f(x) &#x3D; -0.000016</span><br><span class="line">x &#x3D; 0.999998, f(x) &#x3D; -0.000008</span><br><span class="line">x &#x3D; 0.999999, f(x) &#x3D; -0.000004</span><br><span class="line">x &#x3D; 1.000000, f(x) &#x3D; -0.000002</span><br><span class="line">x &#x3D; 1.000000, f(x) &#x3D; -0.000001</span><br><span class="line">x &#x3D; 1.000000, f(x) &#x3D; -0.000001</span><br><span class="line">x &#x3D; 1.000000, f(x) &#x3D; -0.000000</span><br><span class="line">x &#x3D; 1.000000, f(x) &#x3D; -0.000000</span><br><span class="line">x &#x3D; 1.000000, f(x) &#x3D; -0.000000</span><br></pre></td></tr></table></figure>
-
-<p>通过上面的结果，也验证了我们最初的结论。<code>x = 1</code>时，<code>f(x) = 0</code>。<br>所以通过该方法，只要步数足够多，就能得到非常精确的值。</p>
-<h1 id="梯度下降法的今生"><a href="#梯度下降法的今生" class="headerlink" title="梯度下降法的今生"></a>梯度下降法的今生</h1><p>上面是对<code>一维</code>函数进行求解，那么对于<code>多维</code>函数又要如何求呢？我们接着看下面的函数，你会发现对于<code>多维</code>函数也是那么的简单。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f(x) &#x3D; x[0] + 2 * x[1] + 4</span><br></pre></td></tr></table></figure>
-
-<p>同样的如果我们要求<code>f(x) = 0</code>处，<code>x[0]</code>与<code>x[1]</code>的值，也可以通过求<code>error</code>函数的最小值来间接求<code>f(x)</code>的解。跟<code>一维</code>函数唯一不同的是，要分别对<code>x[0]</code>与<code>x[1]</code>进行求导。在数学上叫做<code>偏导数</code>：</p>
-<ul>
-<li>保持x[1]不变，对<code>x[0]</code>进行求导，即<code>f(x)</code>对<code>x[0]</code>的偏导数</li>
-<li>保持x[0]不变，对<code>x[1]</code>进行求导，即<code>f(x)</code>对<code>x[1]</code>的偏导数</li>
-</ul>
-<p>有了上面的理解基础，我们定义的<code>gradient_descent</code>如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def gradient_descent(x):</span><br><span class="line">...     delta &#x3D; 0.00000001</span><br><span class="line">...     derivative_x0 &#x3D; (error([x[0] + delta, x[1]]) - error([x[0], x[1]])) &#x2F; delta</span><br><span class="line">...     derivative_x1 &#x3D; (error([x[0], x[1] + delta]) - error([x[0], x[1]])) &#x2F; delta</span><br><span class="line">...     rate &#x3D; 0.01</span><br><span class="line">...     x[0] &#x3D; x[0] - rate * derivative_x0</span><br><span class="line">...     x[1] &#x3D; x[1] - rate * derivative_x1</span><br><span class="line">...     return [x[0], x[1]]</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<p><code>rate</code>的作用不变，唯一的区别就是分别获取最新的<code>x[0]</code>与<code>x[1]</code>。下面是整个代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def f(x):</span><br><span class="line">...     return x[0] + 2 * x[1] + 4</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; def error(x):</span><br><span class="line">...     return (f(x) - 0)**2</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; def gradient_descent(x):</span><br><span class="line">...     delta &#x3D; 0.00000001</span><br><span class="line">...     derivative_x0 &#x3D; (error([x[0] + delta, x[1]]) - error([x[0], x[1]])) &#x2F; delta</span><br><span class="line">...     derivative_x1 &#x3D; (error([x[0], x[1] + delta]) - error([x[0], x[1]])) &#x2F; delta</span><br><span class="line">...     rate &#x3D; 0.02</span><br><span class="line">...     x[0] &#x3D; x[0] - rate * derivative_x0</span><br><span class="line">...     x[1] &#x3D; x[1] - rate * derivative_x1</span><br><span class="line">...     return [x[0], x[1]]</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; x &#x3D; [-0.5, -1.0]</span><br><span class="line">&gt;&gt;&gt; for i in range(100):</span><br><span class="line">...     x &#x3D; gradient_descent(x)</span><br><span class="line">...     print(&#39;x &#x3D; &#123;:6f&#125;,&#123;:6f&#125;, f(x) &#x3D; &#123;:6f&#125;&#39;.format(x[0],x[1],f(x)))</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<p>输出结果为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">x &#x3D; -0.560000,-1.120000, f(x) &#x3D; 1.200000</span><br><span class="line">x &#x3D; -0.608000,-1.216000, f(x) &#x3D; 0.960000</span><br><span class="line">x &#x3D; -0.646400,-1.292800, f(x) &#x3D; 0.768000</span><br><span class="line">x &#x3D; -0.677120,-1.354240, f(x) &#x3D; 0.614400</span><br><span class="line">x &#x3D; -0.701696,-1.403392, f(x) &#x3D; 0.491520</span><br><span class="line">x &#x3D; -0.721357,-1.442714, f(x) &#x3D; 0.393216</span><br><span class="line">x &#x3D; -0.737085,-1.474171, f(x) &#x3D; 0.314573</span><br><span class="line">x &#x3D; -0.749668,-1.499337, f(x) &#x3D; 0.251658</span><br><span class="line">x &#x3D; -0.759735,-1.519469, f(x) &#x3D; 0.201327</span><br><span class="line">x &#x3D; -0.767788,-1.535575, f(x) &#x3D; 0.161061</span><br><span class="line">x &#x3D; -0.774230,-1.548460, f(x) &#x3D; 0.128849</span><br><span class="line">x &#x3D; -0.779384,-1.558768, f(x) &#x3D; 0.103079</span><br><span class="line">x &#x3D; -0.783507,-1.567015, f(x) &#x3D; 0.082463</span><br><span class="line">x &#x3D; -0.786806,-1.573612, f(x) &#x3D; 0.065971</span><br><span class="line">x &#x3D; -0.789445,-1.578889, f(x) &#x3D; 0.052777</span><br><span class="line">x &#x3D; -0.791556,-1.583112, f(x) &#x3D; 0.042221</span><br><span class="line">x &#x3D; -0.793245,-1.586489, f(x) &#x3D; 0.033777</span><br><span class="line">x &#x3D; -0.794596,-1.589191, f(x) &#x3D; 0.027022</span><br><span class="line">x &#x3D; -0.795677,-1.591353, f(x) &#x3D; 0.021617</span><br><span class="line">x &#x3D; -0.796541,-1.593082, f(x) &#x3D; 0.017294</span><br><span class="line">x &#x3D; -0.797233,-1.594466, f(x) &#x3D; 0.013835</span><br><span class="line">x &#x3D; -0.797786,-1.595573, f(x) &#x3D; 0.011068</span><br><span class="line">x &#x3D; -0.798229,-1.596458, f(x) &#x3D; 0.008854</span><br><span class="line">x &#x3D; -0.798583,-1.597167, f(x) &#x3D; 0.007084</span><br><span class="line">x &#x3D; -0.798867,-1.597733, f(x) &#x3D; 0.005667</span><br><span class="line">x &#x3D; -0.799093,-1.598187, f(x) &#x3D; 0.004533</span><br><span class="line">x &#x3D; -0.799275,-1.598549, f(x) &#x3D; 0.003627</span><br><span class="line">x &#x3D; -0.799420,-1.598839, f(x) &#x3D; 0.002901</span><br><span class="line">x &#x3D; -0.799536,-1.599072, f(x) &#x3D; 0.002321</span><br><span class="line">x &#x3D; -0.799629,-1.599257, f(x) &#x3D; 0.001857</span><br><span class="line">x &#x3D; -0.799703,-1.599406, f(x) &#x3D; 0.001486</span><br><span class="line">x &#x3D; -0.799762,-1.599525, f(x) &#x3D; 0.001188</span><br><span class="line">x &#x3D; -0.799810,-1.599620, f(x) &#x3D; 0.000951</span><br><span class="line">x &#x3D; -0.799848,-1.599696, f(x) &#x3D; 0.000761</span><br><span class="line">x &#x3D; -0.799878,-1.599757, f(x) &#x3D; 0.000608</span><br><span class="line">x &#x3D; -0.799903,-1.599805, f(x) &#x3D; 0.000487</span><br><span class="line">x &#x3D; -0.799922,-1.599844, f(x) &#x3D; 0.000389</span><br><span class="line">x &#x3D; -0.799938,-1.599875, f(x) &#x3D; 0.000312</span><br><span class="line">x &#x3D; -0.799950,-1.599900, f(x) &#x3D; 0.000249</span><br><span class="line">x &#x3D; -0.799960,-1.599920, f(x) &#x3D; 0.000199</span><br><span class="line">x &#x3D; -0.799968,-1.599936, f(x) &#x3D; 0.000159</span><br><span class="line">x &#x3D; -0.799974,-1.599949, f(x) &#x3D; 0.000128</span><br><span class="line">x &#x3D; -0.799980,-1.599959, f(x) &#x3D; 0.000102</span><br><span class="line">x &#x3D; -0.799984,-1.599967, f(x) &#x3D; 0.000082</span><br><span class="line">x &#x3D; -0.799987,-1.599974, f(x) &#x3D; 0.000065</span><br><span class="line">x &#x3D; -0.799990,-1.599979, f(x) &#x3D; 0.000052</span><br><span class="line">x &#x3D; -0.799992,-1.599983, f(x) &#x3D; 0.000042</span><br><span class="line">x &#x3D; -0.799993,-1.599987, f(x) &#x3D; 0.000033</span><br><span class="line">x &#x3D; -0.799995,-1.599989, f(x) &#x3D; 0.000027</span><br><span class="line">x &#x3D; -0.799996,-1.599991, f(x) &#x3D; 0.000021</span><br><span class="line">x &#x3D; -0.799997,-1.599993, f(x) &#x3D; 0.000017</span><br><span class="line">x &#x3D; -0.799997,-1.599995, f(x) &#x3D; 0.000014</span><br><span class="line">x &#x3D; -0.799998,-1.599996, f(x) &#x3D; 0.000011</span><br><span class="line">x &#x3D; -0.799998,-1.599997, f(x) &#x3D; 0.000009</span><br><span class="line">x &#x3D; -0.799999,-1.599997, f(x) &#x3D; 0.000007</span><br><span class="line">x &#x3D; -0.799999,-1.599998, f(x) &#x3D; 0.000006</span><br><span class="line">x &#x3D; -0.799999,-1.599998, f(x) &#x3D; 0.000004</span><br><span class="line">x &#x3D; -0.799999,-1.599999, f(x) &#x3D; 0.000004</span><br><span class="line">x &#x3D; -0.799999,-1.599999, f(x) &#x3D; 0.000003</span><br><span class="line">x &#x3D; -0.800000,-1.599999, f(x) &#x3D; 0.000002</span><br><span class="line">x &#x3D; -0.800000,-1.599999, f(x) &#x3D; 0.000002</span><br><span class="line">x &#x3D; -0.800000,-1.599999, f(x) &#x3D; 0.000001</span><br><span class="line">x &#x3D; -0.800000,-1.600000, f(x) &#x3D; 0.000001</span><br><span class="line">x &#x3D; -0.800000,-1.600000, f(x) &#x3D; 0.000001</span><br><span class="line">x &#x3D; -0.800000,-1.600000, f(x) &#x3D; 0.000001</span><br><span class="line">x &#x3D; -0.800000,-1.600000, f(x) &#x3D; 0.000001</span><br><span class="line">x &#x3D; -0.800000,-1.600000, f(x) &#x3D; 0.000000</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>细心的你可能会发现，<code>f(x) = 0</code>不止这一个解还可以是<code>x = -2, -1</code>。这是因为梯度下降法只是对<code>当前所处的凹谷</code>进行梯度下降求解，对于<code>error</code>函数并不代表只有一个<code>f(x) = 0</code>的凹谷。所以梯度下降法只能求得局部解，但不一定能求得全部的解。当然如果对于非常复杂的函数，能够求得局部解也是非常不错的。</p>
-</blockquote>
-<h1 id="tensorflow中的运用"><a href="#tensorflow中的运用" class="headerlink" title="tensorflow中的运用"></a>tensorflow中的运用</h1><p>通过上面的示例，相信对<code>梯度下降</code>也有了一个基本的认识。现在我们回到最开始的地方，在<code>tensorflow</code>中使用<code>gradientDescent</code>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import tensorflow as tf</span><br><span class="line"> </span><br><span class="line"># Model parameters</span><br><span class="line">W &#x3D; tf.Variable([.3], dtype&#x3D;tf.float32)</span><br><span class="line">b &#x3D; tf.Variable([-.3], dtype&#x3D;tf.float32)</span><br><span class="line"># Model input and output</span><br><span class="line">x &#x3D; tf.placeholder(tf.float32)</span><br><span class="line">linear_model &#x3D; W*x + b</span><br><span class="line">y &#x3D; tf.placeholder(tf.float32)</span><br><span class="line"> </span><br><span class="line"># loss</span><br><span class="line">loss &#x3D; tf.reduce_sum(tf.square(linear_model - y)) # sum of the squares</span><br><span class="line"># optimizer</span><br><span class="line">optimizer &#x3D; tf.train.GradientDescentOptimizer(0.01)</span><br><span class="line">train &#x3D; optimizer.minimize(loss)</span><br><span class="line"> </span><br><span class="line"># training data</span><br><span class="line">x_train &#x3D; [1, 2, 3, 4]</span><br><span class="line">y_train &#x3D; [0, -1, -2, -3]</span><br><span class="line"># training loop</span><br><span class="line">init &#x3D; tf.global_variables_initializer()</span><br><span class="line">sess &#x3D; tf.Session()</span><br><span class="line">sess.run(init) # reset values to wrong</span><br><span class="line">for i in range(1000):</span><br><span class="line">  sess.run(train, &#123;x: x_train, y: y_train&#125;)</span><br><span class="line"> </span><br><span class="line"># evaluate training accuracy</span><br><span class="line">curr_W, curr_b, curr_loss &#x3D; sess.run([W, b, loss], &#123;x: x_train, y: y_train&#125;)</span><br><span class="line">print(&quot;W: %s b: %s loss: %s&quot;%(curr_W, curr_b, curr_loss))</span><br></pre></td></tr></table></figure>
-
-<p>上面的是<a href="https://www.tensorflow.org/get_started/get_started" target="_blank" rel="noopener">tensorflow</a>的官网示例，上面代码定义了函数<code>linear_model = W * x + b</code>,其中的<code>error</code>函数为<code>linear_model - y</code>。目的是对一组<code>x_train</code>与<code>y_train</code>进行简单的训练求解<code>W</code>与<code>b</code>。为了求得这一组数据的最优解，将每一组的<code>error</code>相加从而得到<code>loss</code>，最后再对<code>loss</code>进行梯度下降求解最优值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">optimizer &#x3D; tf.train.GradientDescentOptimizer(0.01)</span><br><span class="line">train &#x3D; optimizer.minimize(loss)</span><br></pre></td></tr></table></figure>
-
-<p>在这里<code>rate</code>为<code>0.01</code>,因为这个示例也是<code>多维</code>函数，所以也要用到<code>偏导数</code>来进行逐步向最优解靠近。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for i in range(1000):</span><br><span class="line">  sess.run(train, &#123;x: x_train, y: y_train&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>最后使用<code>梯度下降</code>进行循环推导，下面给出一些推导过程中的相关结果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">W: [-0.21999997] b: [-0.456] loss: 4.01814</span><br><span class="line">W: [-0.39679998] b: [-0.49552] loss: 1.81987</span><br><span class="line">W: [-0.45961601] b: [-0.4965184] loss: 1.54482</span><br><span class="line">W: [-0.48454273] b: [-0.48487374] loss: 1.48251</span><br><span class="line">W: [-0.49684232] b: [-0.46917531] loss: 1.4444</span><br><span class="line">W: [-0.50490189] b: [-0.45227283] loss: 1.4097</span><br><span class="line">W: [-0.5115062] b: [-0.43511063] loss: 1.3761</span><br><span class="line">....</span><br><span class="line">....</span><br><span class="line">....</span><br><span class="line">W: [-0.99999678] b: [ 0.99999058] loss: 5.84635e-11</span><br><span class="line">W: [-0.99999684] b: [ 0.9999907] loss: 5.77707e-11</span><br><span class="line">W: [-0.9999969] b: [ 0.99999082] loss: 5.69997e-11</span><br></pre></td></tr></table></figure>
-
-<p>这里就不推理验证了，如果看了上面的<code>梯度下降</code>的前世今生，相信能够自主的推导出来。那么我们直接看最后的结果，可以估算为<code>W = -1.0</code>与<code>b = 1.0</code>，将他们带入上面的<code>loss</code>得到的结果为<code>0.0</code>，即误差损失值最小，所以<code>W = -1.0</code>与<code>b = 1.0</code>就是<code>x_train</code>与<code>y_train</code>这组数据的最优解。</p>
-<p>好了，关于<code>梯度下降</code>的内容就到这了，希望能够帮助到你；如有不足之处欢迎来讨论，如果感觉这篇文章不错的话，可以关注<a href="https://idisfkj.github.io/archives/" target="_blank" rel="noopener">我的博客</a>，或者扫描下方二维码关注：怪谈时间到了 公众号，查看我的其它文章。</p>
-<p><a href="https://idisfkj.github.io/archives/" target="_blank" rel="noopener">博客地址</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/02/tensorflow-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D,%E6%9C%89%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E8%B6%B3%E5%A4%9F%E4%BA%86/" data-id="ckaxrnx42000330v42b67ahj1" class="article-share-link">Share</a>
-      
-      
-    </footer>
   </div>
   
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/06/02/tensorflow-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D,%E6%9C%89%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E8%B6%B3%E5%A4%9F%E4%BA%86/" class="article-date">
+	  <time datetime="2020-06-02T10:07:53.010Z" itemprop="datePublished">6月 2</time>
+	</a>
+</span>
+    
+    
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/06/02/tensorflow-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D,%E6%9C%89%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E8%B6%B3%E5%A4%9F%E4%BA%86/#comments" class="article-comment-link">评论</a></span>
+    
+  </p>
 </article>
 
-
-  
-    <article id="post-BP神经网络学习" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/02/BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/" class="article-date">
-  <time datetime="2020-06-02T10:07:52.991Z" itemprop="datePublished">2020-06-02</time>
-</a>
     
-  </div>
-  <div class="article-inner">
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/06/02/BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/">BP神经网络学习</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="BP神经网络学习"><a href="#BP神经网络学习" class="headerlink" title="BP神经网络学习"></a>BP神经网络学习</h4><h6 id="tensorflow的实现方式"><a href="#tensorflow的实现方式" class="headerlink" title="tensorflow的实现方式"></a>tensorflow的实现方式</h6><ol>
-<li><p>tf.cast()函数的作用是执行 tensorflow 中张量数据类型转换，比如读入的图片如果是int8类型的，一般在要在训练前把图像的数据格式转换为float32。cast定义：</p>
-<p>cast(x, dtype, name=None)<br>第一个参数 x:   待转换的数据（张量）<br>第二个参数 dtype： 目标数据类型<br>第三个参数 name： 可选参数，定义操作的名称</p>
-</li>
-<li><p>关于损失函数</p>
-<p>梯度下降算法，目标其实就是使得损失函数取得最小值。有两种现象：</p>
-</li>
-</ol>
-<ul>
-<li><p>一是根据选用的损失函数计算式，对损失函数求导，==得出一个复杂的，可能涉及到很多个变量的导函数==然后可知目前这一点处的斜率，用的是计算式，然后更新的x=x-n*k。</p>
-</li>
-<li><p>二是根据导函数的定义式，即y-y’/△x，如此只需要知道损失函数的表达式即可，对于每一个变量计算，其他视为常量，简便的计算出变化量。</p>
-<p>损失函数的计算，随机梯度下降，梯度下降，两者的区别是什么？</p>
-<p>其他的损失函数是什么？</p>
-</li>
-</ul>
-<ol start="3">
-<li><p>五 BP的缺点</p>
-<p>(1)BP学习算法采用梯度下降法来收敛实际输出与期望输出之间误差。因为误差是高</p>
-<p>维权向量的复杂非线性函数，故易陷入局部极小值;</p>
-<p>(2)网络在学习过程收敛速度慢;</p>
-<p>(3)在网络训练过程中容易发生振荡，导致网络无法收敛;</p>
-<p>(4)网络的结构难以确定(包括隐层数及各隐层节点数的确定);</p>
-<p>(5)在学习新样本时有遗忘以学过样本的趋势，因为每输入一个样本，网络的权值就</p>
-<p>要修改一次。</p>
-<p>(6)学习样本的数量和质量影响学习效果(主要是泛化能力)和学习速度。</p>
-<p>正是因为BP网络白身的缺陷使得其在应用过程中存在一些棘手的问题，从而极大地影响了BP网络的进一步发展和应用。在上面的儿点中，前四点都是BP网络存在的最引人</p>
-<p>注目的问题，第五点也是很有研究价值的一个内容。其实现在还有很多的发展，但是这个毕竟是最经典的算法，我就拿来说说。</p>
-</li>
-<li><p>什么时候结束训练。三种情况下：</p>
-<p>● 权重的更新低于某个阈值的时候</p>
-<p>● 预测的错误率低于某个阈值</p>
-<p>● 达到预设一定的迭代次数</p>
-</li>
-<li><p>总结</p>
-<p><strong>神经网络的优点：</strong></p>
-<p>网络实质上实现了一个从输入到输出的映射功能，而数学理论已证明它具有实现任何复杂非线性映射的功能。这使得它特别适合于求解内部机制复杂的问题。</p>
-<p>网络能通过学习带正确答案的实例集自动提取“合理的”求解规则，即具有自学习能力。</p>
-<p>网络具有一定的推广、概括能力。</p>
-<p><strong>神经网络的缺点：</strong></p>
-<p>对初始权重非常敏感，极易收敛于局部极小。</p>
-<p>容易 Over Fitting 和 Over Training。</p>
-<p>如何选择隐藏层数和神经元个数没有一个科学的指导流程，有时候感觉就是靠猜。</p>
-<p><strong>应用领域：</strong></p>
-<p>常见的有图像分类，自动驾驶，自然语言处理等。</p>
-<p> TODO</p>
-<p>但其实想要训练好一个神经网络还面临着很多的坑（譬如下面四条）：</p>
-<ol>
-<li><p>如何选择超参数的值，譬如说神经网络的层数和每层的神经元数量以及学习率；</p>
-</li>
-<li><p>既然对初始化权重敏感，那该如何避免和修正；</p>
-</li>
-<li><p>Sigmoid 激活函数在深度神经网络中会面临梯度消失问题该如何解决；</p>
-</li>
-<li><p>避免 Overfitting 的 L1 和 L2正则化是什么</p>
-</li>
-</ol>
-</li>
-<li><p><a href="https://www.cnblogs.com/Turing-dz/p/11609833.html" target="_blank" rel="noopener">深度学习TensorFlow笔记——损失函数</a></p>
-<p>1.损失函数———经典损失函数——–交叉熵：交叉熵刻画了两个概率分布之间的距离，它是分类问题中使用比较广的一种损失函数。通过q来表示p的交叉熵为：</p>
-</li>
-</ol>
-<p>   <img src="https://img2018.cnblogs.com/blog/1773156/201909/1773156-20190929185825775-1779235170.png" alt="img"></p>
-<p>   Softmax将神经网络前向传播得到的结果变成概率分布，原始神经网络的输出被用作置信度来生成新的输出，而新的输出满足概率分布的所有要求。</p>
-<p>   交叉熵函数不是对称的，H（p，q）！=H（q，p），他刻画的是通过概率分布q来表达概率分布p的困难程度。因为正确答案是希望得到的结果，所以当交叉熵作为神经网络的损失函数是，p代表的是正确答案，q代表的是预测值。交叉熵刻画的是两个概率分布的距离，也就是说交叉熵值越小，两个概率分布越接近。</p>
-<p>   tensorflow实现交叉熵代码：<img src="https://img2018.cnblogs.com/blog/1773156/201909/1773156-20190929192159329-222954999.png" alt="img"></p>
-<pre><code>其中y_代表正确结果，y代表预测结果。tf.clip_by_value()函数的意思是，小于1e-10的数全换成1e-10，大于1的数全换成1。tensorflow中*的意思是对应相同位置的数项乘，不是矩阵的乘法。
-
-因为交叉熵一般会与softmax回归一起使用，所以tensorflow对这两个功能进行了统一封装：![img](https://img2018.cnblogs.com/blog/1773156/201909/1773156-20190929195734140-1672601671.png)
-
-
-
-通过这个命令就可以得到使用了Softmax回归之后的交叉熵。</code></pre><p>   在只有一个正确答案的分类问题中，tensorflow提供了tf.nn.sparse_softmax_cross_entropy_with_logits函数来进一步加速计算过程。</p>
-<p>   2.损失函数———经典损失函数——–均方误差（MSE，mean squared error):</p>
-<p>   <img src="https://img2018.cnblogs.com/blog/1773156/201909/1773156-20190929201000172-12608638.png" alt="img"></p>
-<pre><code>其中yi为一个batch中第i个数据的正确答案，而yi‘为神经网络给出的预测值。tensorflow实现代码：![img](https://img2018.cnblogs.com/blog/1773156/201909/1773156-20190929201339101-78377775.png)
-
-3.损失函数---------自定义函数-----</code></pre><p>   tf.greater(A,B)  返回A&gt;B的结果，布尔值</p>
-<p>   tf.select(C,A,B)  C为真时（True）,返回A值，为假（False)时返回B值。</p>
-<p>   这两个函数都是在元素级别进行</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/02/BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/" data-id="ckaxrnx3t000030v4b4d82sum" class="article-share-link">Share</a>
-      
-      
-    </footer>
   </div>
   
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/06/02/BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/" class="article-date">
+	  <time datetime="2020-06-02T10:07:52.991Z" itemprop="datePublished">6月 2</time>
+	</a>
+</span>
+    
+    
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/06/02/BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/#comments" class="article-comment-link">评论</a></span>
+    
+  </p>
 </article>
 
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/02/hello-world/" class="article-date">
-  <time datetime="2020-06-02T10:01:53.020Z" itemprop="datePublished">2020-06-02</time>
-</a>
     
-  </div>
-  <div class="article-inner">
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/06/02/hello-world/">Hello World</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/02/hello-world/" data-id="ckaxrnx3z000130v42rcxbt2u" class="article-share-link">Share</a>
-      
-      
-    </footer>
   </div>
   
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/06/02/hello-world/" class="article-date">
+	  <time datetime="2020-06-02T10:01:53.020Z" itemprop="datePublished">6月 2</time>
+	</a>
+</span>
+    
+    
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/06/02/hello-world/#comments" class="article-comment-link">评论</a></span>
+    
+  </p>
 </article>
 
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
     
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li></ul>
-    </div>
   </div>
 
+   
+</main>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
         
-          <li>
-            <a href="/2020/06/02/%E5%AE%9E%E7%8E%B0%E4%B8%8E%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/">实现与问题汇总</a>
-          </li>
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
         
-          <li>
-            <a href="/2020/06/02/%E6%8A%80%E6%9C%AF%E6%8A%80%E8%83%BD/">技术技能</a>
-          </li>
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
         
-          <li>
-            <a href="/2020/06/02/%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E20200430/">函数使用说明20200430</a>
-          </li>
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
         
-          <li>
-            <a href="/2020/06/02/tensorflow-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D,%E6%9C%89%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E8%B6%B3%E5%A4%9F%E4%BA%86/">tensorflow-梯度下降,有这一篇就足够了</a>
-          </li>
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
         
-          <li>
-            <a href="/2020/06/02/BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/">BP神经网络学习</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+    </ul>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
     </div>
-  </div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/plugin.min.js"></script>
 
 
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script src="/js/application.js"></script>
 
 
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
 
 
-<script src="/js/script.js"></script>
 
 
 
 
-  </div>
+   
+
+
+
+
+
+
+
+
+
 </body>
 </html>
