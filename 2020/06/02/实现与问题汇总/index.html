@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>实现与问题汇总 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="20200323 数据降维，比例，高低占比。是否影响精度。   影响训练结果。数据多的特征容易占据主导地位。   师弟的BP神经网络  别人做过的，信号分成不同分量。钢管测量腐蚀，小波重组。  conv1D的情况  85%正确率是什么情况。汽车全对，人全错？混淆矩阵，输出看一下情况。    85是预测一边倒的情况   工程使用。如何预测。   可视化、训练模型直接使用，CNNtest.py实现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实现与问题汇总">
+<meta property="og:url" content="http://yoursite.com/2020/06/02/%E5%AE%9E%E7%8E%B0%E4%B8%8E%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="20200323 数据降维，比例，高低占比。是否影响精度。   影响训练结果。数据多的特征容易占据主导地位。   师弟的BP神经网络  别人做过的，信号分成不同分量。钢管测量腐蚀，小波重组。  conv1D的情况  85%正确率是什么情况。汽车全对，人全错？混淆矩阵，输出看一下情况。    85是预测一边倒的情况   工程使用。如何预测。   可视化、训练模型直接使用，CNNtest.py实现">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-02T10:07:53.033Z">
+<meta property="article:modified_time" content="2020-04-29T13:03:43.125Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-实现与问题汇总" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/02/%E5%AE%9E%E7%8E%B0%E4%B8%8E%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" class="article-date">
+  <time datetime="2020-06-02T10:07:53.033Z" itemprop="datePublished">2020-06-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      实现与问题汇总
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="20200323"><a href="#20200323" class="headerlink" title="20200323"></a>20200323</h4><ol>
+<li><strong>数据降维，比例，高低占比。是否影响精度。</strong></li>
+</ol>
+<ul>
+<li>影响训练结果。数据多的特征容易占据主导地位。</li>
+</ul>
+<ol start="2">
+<li><p><strong>师弟的BP神经网络</strong></p>
+</li>
+<li><p><strong>别人做过的，信号分成不同分量。钢管测量腐蚀，小波重组。</strong></p>
+</li>
+<li><p><strong>conv1D的情况</strong></p>
+</li>
+<li><p><strong>85%正确率是什么情况。汽车全对，人全错？混淆矩阵，输出看一下情况。</strong></p>
+</li>
+</ol>
+<ul>
+<li>85是预测一边倒的情况</li>
+</ul>
+<ol start="6">
+<li><strong>工程使用。如何预测。</strong></li>
+</ol>
+<ul>
+<li>可视化、训练模型直接使用，CNNtest.py实现</li>
+</ul>
+<ol start="7">
+<li><strong>预测使用的时候，正式使用的时候，要去掉dropout层。那么这是自动去掉还是需要手动去掉？keras的两种模式自动切换？(done)</strong></li>
+</ol>
+<ul>
+<li>可视化.md解决</li>
+</ul>
+<ol start="8">
+<li><p><strong>数据集，高频成分是否需要考虑，影响？</strong></p>
+</li>
+<li><p><strong>BN层。基本知识和应用(done。具体细节还需要考虑)</strong></p>
+</li>
+<li><p>==<strong>置信概率。多少作出判断。</strong>==</p>
+<p>判决机制是什么？如何做出判断？</p>
+</li>
+<li><p><strong>现有的训练，如何继续推进，往实际应用方向前进。</strong></p>
+</li>
+<li><p><strong>写文章</strong></p>
+</li>
+<li><p><strong>学习高精尖技术，结合libs学习。</strong></p>
+</li>
+</ol>
+<h4 id="20200328"><a href="#20200328" class="headerlink" title="20200328"></a><strong>20200328</strong></h4><ul>
+<li><input disabled="" type="checkbox"> 加入马的数据，第三个模式。</li>
+<li><input disabled="" type="checkbox"> BP神经网络的实现，纯手工制作</li>
+<li><input disabled="" type="checkbox"> BP神经网络，调用tensorflow。</li>
+<li><input disabled="" type="checkbox"> 采用预训练模型，如何使用，如何冻结</li>
+<li><input disabled="" type="checkbox"> 如何调参数、</li>
+<li><input disabled="" type="checkbox"> 局部最优</li>
+<li><input disabled="" type="checkbox"> </li>
+</ul>
+<p>最简单的训练终止条件为设置最大迭代次数， 如将数据集迭代1000次后终止训练.</p>
+<ul>
+<li><p>单纯的设置最大迭代次数不能保证训练结果的精确度， 更好的办法是使用损失函数(loss function)作为终止训练的依据.</p>
+</li>
+<li><p>损失函数可以选用输出层各节点的方差:L=∑j(Tj−Oj)2</p>
+</li>
+<li><p>为了避免神经网络进行无意义的迭代， 我们通常在训练数据集中抽出一部分用作校验.当预测误差高于阈值时提前终止训练.</p>
+</li>
+</ul>
+<h4 id="20200401"><a href="#20200401" class="headerlink" title="20200401"></a>20200401</h4><ol>
+<li>python 对于列表的操作，如果一个列表位数已经确定且存在，不能再对他赋予其他维度的值。</li>
+<li>对于delete矩阵的最后一列或者两列的操作，要搞清楚是否有效。对于reshape出来的矩阵。</li>
+</ol>
+<h4 id="读取文件的注意事项"><a href="#读取文件的注意事项" class="headerlink" title="读取文件的注意事项"></a>读取文件的注意事项</h4><ul>
+<li><p>读取H5文件的时候，读取出来的是数据，还是一个格式。读取标签的时候，读取出来的不是具体的数据，需要把数据复制出俩==[:]==这种复制法方法很实用。还有一种就是循环读取。等。</p>
+</li>
+<li><p>安装keras2.1.3，终端安装</p>
+</li>
+<li><p>安装绘制图seaborn画图</p>
+</li>
+<li><pre><code>Installing collected packages: pytz, pandas, seaborn
+Successfully installed pandas-1.0.3 pytz-2019.3 seaborn-0.10.0
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- sklearn安装</span><br><span class="line"></span><br><span class="line">- 专门做输出 统计的库</span><br><span class="line"></span><br><span class="line">- 归一化函数，很牛皮的。</span><br><span class="line"></span><br><span class="line">-</span><br></pre></td></tr></table></figure>
+from sklearn.preprocessing import normalize
+data = np.array([
+    [1000, 10, 0.5],
+    [765, 5, 0.35],
+    [800, 7, 0.09], ])
+data = normalize(data, axis=1, norm=&apos;max&apos;)
+print(data)
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 置信概率</span><br><span class="line"></span><br><span class="line">- 结合labview</span><br><span class="line"></span><br><span class="line">- 实验源头数据测量，数据处理。先定位位置，远近信号差异大，远处数据多，占据数据多，主导影响大。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### 20200422</span><br><span class="line"></span><br><span class="line">- 部署服务器：如何把一台电脑变成服务器，所有人都能访问</span><br><span class="line">- 集群是什么意思，有什么用。那些软件都是什么？</span><br><span class="line">- centos学习，Linux，Ubuntu</span><br><span class="line">- 虚拟机vmvare，docer等等。</span><br><span class="line">- 远程连接，teamviewer，</span><br><span class="line">- 不断参加竞赛，做各种竞赛题目，和别人比赛</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### 20200429pytorch函数</span><br><span class="line"></span><br><span class="line">1. pytorch使用的数据结构是tensor类型。np或者list转换tensor有三个手段</span><br><span class="line"></span><br><span class="line">   &#96;&#96;&#96;python</span><br><span class="line">   # var1 &#x3D; x1.numpy()</span><br><span class="line">   # var2 &#x3D; torch.from_numpy(a)</span><br><span class="line">   # Variablie不可以转变类型</span><br><span class="line">   #dataset可以转换数据类型</span><br><span class="line">   </span><br><span class="line">   区别tensor中类型转化，.type(torch.FloatTensor)</span><br></pre></td></tr></table></figure></code></pre></li>
+</ul>
+<ol start="2">
+<li><p>loss函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loss = loss_func(output, batch_y)<span class="comment">#计算误差</span></span><br></pre></td></tr></table></figure>
+
+<p>#会自动化为one-hot类型,所以batch_y必须是单数字标签<br>#输入input要求为logit（模型输出且不经过softmax），target为该样本对应的类别, tensorlong类型（int64位）</p>
+</li>
+<li><p>数据集封装及batch</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">image_data_label &#x3D; data.DataLoader(dataset&#x3D;image_data_label, batch_size&#x3D;BATCH_SIZE, shuffle&#x3D;False)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>绘制混淆矩阵</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">con_mat = confusion_matrix(truelabel, predictions)</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="5">
+<li>CNN网络conv1D是用于处理文本数据的。</li>
+<li>CNN灰度图，是单通道的，可以在这里使用</li>
+<li>另给一种有效的处理方式：多源传感数据融合，前端灰度图像、TOF图像、红外图像、多光谱图像、激光点云转化的灰度图、DEM高程图等，带有深度信息或其他波段的光学信息图像作为通道输入，这样三个通道分别学习不同的信息，可能更有效一些。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">_________________________________________________________________</span><br><span class="line">Layer (type)                 Output Shape              Param <span class="comment">#   </span></span><br><span class="line">=================================================================</span><br><span class="line">conv2d_1 (Conv2D)            (<span class="literal">None</span>, <span class="number">50</span>, <span class="number">100</span>, <span class="number">32</span>)       <span class="number">896</span>       </span><br><span class="line">_________________________________________________________________</span><br><span class="line">max_pooling2d_1 (MaxPooling2 (<span class="literal">None</span>, <span class="number">25</span>, <span class="number">50</span>, <span class="number">32</span>)        <span class="number">0</span>         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dropout_1 (Dropout)          (<span class="literal">None</span>, <span class="number">25</span>, <span class="number">50</span>, <span class="number">32</span>)        <span class="number">0</span>         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_2 (Conv2D)            (<span class="literal">None</span>, <span class="number">25</span>, <span class="number">50</span>, <span class="number">64</span>)        <span class="number">18496</span>     </span><br><span class="line">_________________________________________________________________</span><br><span class="line">max_pooling2d_2 (MaxPooling2 (<span class="literal">None</span>, <span class="number">12</span>, <span class="number">25</span>, <span class="number">64</span>)        <span class="number">0</span>         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dropout_2 (Dropout)          (<span class="literal">None</span>, <span class="number">12</span>, <span class="number">25</span>, <span class="number">64</span>)        <span class="number">0</span>         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_3 (Conv2D)            (<span class="literal">None</span>, <span class="number">12</span>, <span class="number">25</span>, <span class="number">128</span>)       <span class="number">73856</span>     </span><br><span class="line">_________________________________________________________________</span><br><span class="line">max_pooling2d_3 (MaxPooling2 (<span class="literal">None</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">128</span>)        <span class="number">0</span>         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dropout_3 (Dropout)          (<span class="literal">None</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">128</span>)        <span class="number">0</span>         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">flatten_1 (Flatten)          (<span class="literal">None</span>, <span class="number">9216</span>)              <span class="number">0</span>         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_1 (Dense)              (<span class="literal">None</span>, <span class="number">128</span>)               <span class="number">1179776</span>   </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_2 (Dense)              (<span class="literal">None</span>, <span class="number">64</span>)                <span class="number">8256</span>      </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_3 (Dense)              (<span class="literal">None</span>, <span class="number">32</span>)                <span class="number">2080</span>      </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_4 (Dense)              (<span class="literal">None</span>, <span class="number">3</span>)                 <span class="number">99</span>        </span><br><span class="line">=================================================================</span><br><span class="line">Total params: <span class="number">1</span>,<span class="number">283</span>,<span class="number">459</span></span><br><span class="line">Trainable params: <span class="number">1</span>,<span class="number">283</span>,<span class="number">459</span></span><br><span class="line">Non-trainable params: <span class="number">0</span></span><br><span class="line">_________________________________________________________________</span><br><span class="line"><span class="literal">None</span></span><br><span class="line">Train on <span class="number">5029</span> samples, validate on <span class="number">51</span> samples</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> h5py</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">trainfile = h5py.File(<span class="string">'data10/test.h5'</span>,<span class="string">'r'</span>)</span><br><span class="line"><span class="comment"># testfile = h5py.File('test.h5','r')</span></span><br><span class="line">image_data = []</span><br><span class="line">image_data_label = []</span><br><span class="line">image_data = trainfile[<span class="string">'test'</span>][:] <span class="comment"># 读取数据，读取data和label</span></span><br><span class="line"><span class="comment"># test_data = testfile['test']</span></span><br><span class="line">image_data_label = trainfile[<span class="string">'test_label'</span>][:]</span><br><span class="line"><span class="comment"># test_data_label = testfile['test_label']</span></span><br><span class="line">trainfile.close()</span><br><span class="line"></span><br><span class="line">print(image_data)</span><br><span class="line">print(image_data_label)</span><br><span class="line"></span><br><span class="line">randnum = np.random.randint(<span class="number">0</span>,<span class="number">100</span>)</span><br><span class="line">np.random.seed(randnum)</span><br><span class="line">np.random.shuffle(image_data)</span><br><span class="line">np.random.seed(randnum)</span><br><span class="line">np.random.shuffle(image_data_label)</span><br><span class="line"></span><br><span class="line">print(image_data)</span><br><span class="line">print(image_data_label)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">b = [1, 2, 3, 4, 5, 6 , 7, 8 ,9]</span></span><br><span class="line"><span class="string">a  = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']</span></span><br><span class="line"><span class="string">c = list(zip(a, b))</span></span><br><span class="line"><span class="string">print(c)</span></span><br><span class="line"><span class="string">random.shuffle(c)</span></span><br><span class="line"><span class="string">print(c)</span></span><br><span class="line"><span class="string">a, b = zip(*c)</span></span><br><span class="line"><span class="string">print(a)</span></span><br><span class="line"><span class="string">print(b)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/02/%E5%AE%9E%E7%8E%B0%E4%B8%8E%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" data-id="ckaxrnx43000430v4h2i52017" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/02/%E6%8A%80%E6%9C%AF%E6%8A%80%E8%83%BD/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">技术技能</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/02/%E5%AE%9E%E7%8E%B0%E4%B8%8E%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/">实现与问题汇总</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/02/%E6%8A%80%E6%9C%AF%E6%8A%80%E8%83%BD/">技术技能</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/02/%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E20200430/">函数使用说明20200430</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/02/tensorflow-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D,%E6%9C%89%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E8%B6%B3%E5%A4%9F%E4%BA%86/">tensorflow-梯度下降,有这一篇就足够了</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/02/BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/">BP神经网络学习</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

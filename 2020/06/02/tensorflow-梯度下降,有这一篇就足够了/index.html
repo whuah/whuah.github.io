@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>tensorflow-梯度下降,有这一篇就足够了 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="tensorflow-梯度下降,有这一篇就足够了更新于 2018-07-03  约 20 分钟 前言最近机器学习越来越火了，前段时间斯丹福大学副教授吴恩达都亲自录制了关于Deep Learning Specialization的教程，在国内掀起了巨大的学习热潮。本着不被时代抛弃的念头，自己也开始研究有关机器学习的知识。都说机器学习的学习难度非常大，但不亲自尝试一下又怎么会知道其中的奥妙与乐趣呢？只">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tensorflow-梯度下降,有这一篇就足够了">
+<meta property="og:url" content="http://yoursite.com/2020/06/02/tensorflow-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D,%E6%9C%89%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E8%B6%B3%E5%A4%9F%E4%BA%86/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="tensorflow-梯度下降,有这一篇就足够了更新于 2018-07-03  约 20 分钟 前言最近机器学习越来越火了，前段时间斯丹福大学副教授吴恩达都亲自录制了关于Deep Learning Specialization的教程，在国内掀起了巨大的学习热潮。本着不被时代抛弃的念头，自己也开始研究有关机器学习的知识。都说机器学习的学习难度非常大，但不亲自尝试一下又怎么会知道其中的奥妙与乐趣呢？只">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://segmentfault.com/img/bVYurc?w=800&amp;h=800">
+<meta property="og:image" content="https://segmentfault.com/img/bVYurg?w=800&amp;h=800">
+<meta property="og:image" content="https://segmentfault.com/img/bVYuru?w=431&h=54">
+<meta property="article:published_time" content="2020-06-02T10:07:53.010Z">
+<meta property="article:modified_time" content="2020-03-30T08:17:24.952Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://segmentfault.com/img/bVYurc?w=800&amp;h=800">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-tensorflow-梯度下降,有这一篇就足够了" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/02/tensorflow-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D,%E6%9C%89%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E8%B6%B3%E5%A4%9F%E4%BA%86/" class="article-date">
+  <time datetime="2020-06-02T10:07:53.010Z" itemprop="datePublished">2020-06-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      tensorflow-梯度下降,有这一篇就足够了
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="tensorflow-梯度下降-有这一篇就足够了"><a href="#tensorflow-梯度下降-有这一篇就足够了" class="headerlink" title="tensorflow-梯度下降,有这一篇就足够了"></a><a href="https://segmentfault.com/a/1190000011994447" target="_blank" rel="noopener">tensorflow-梯度下降,有这一篇就足够了</a></h1><p>更新于 2018-07-03  约 20 分钟</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近机器学习越来越火了，前段时间斯丹福大学副教授吴恩达都亲自录制了关于<code>Deep Learning Specialization</code>的教程，在国内掀起了巨大的学习热潮。本着不被时代抛弃的念头，自己也开始研究有关机器学习的知识。都说机器学习的学习难度非常大，但不亲自尝试一下又怎么会知道其中的奥妙与乐趣呢？只有不断的尝试才能找到最适合自己的道路。</p>
+<p>请容忍我上述的自我煽情，下面进入主题。这篇文章主要对机器学习中所遇到的<code>GradientDescent</code>(梯度下降)进行全面分析，相信你看了这篇文章之后，对<code>GradientDescent</code>将彻底弄明白其中的原理。</p>
+<h1 id="梯度下降的概念"><a href="#梯度下降的概念" class="headerlink" title="梯度下降的概念"></a>梯度下降的概念</h1><p><code>梯度下降法</code>是一个一阶最优化算法，通常也称为最速下降法。要使用梯度下降法找到一个函数的局部极小值，必须向函数上当前点对于梯度（或者是近似梯度）的反方向的规定步长距离点进行迭代搜索。所以梯度下降法可以帮助我们求解某个函数的极小值或者最小值。对于n维问题就最优解，梯度下降法是最常用的方法之一。下面通过梯度下降法的<code>前生今世</code>来进行详细推导说明。</p>
+<h1 id="梯度下降法的前世"><a href="#梯度下降法的前世" class="headerlink" title="梯度下降法的前世"></a>梯度下降法的前世</h1><p>首先从简单的开始，看下面的一维函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f(x) &#x3D; x^3 + 2 * x - 3</span><br></pre></td></tr></table></figure>
+
+<img src="https://segmentfault.com/img/bVYurc?w=800&amp;h=800" alt="clipboard.png" style="zoom:33%;" />
+
+<p>在数学中如果我们要求<code>f(x) = 0</code>处的解，我们可以通过如下误差等式来求得：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error &#x3D; (f(x) - 0)^2</span><br></pre></td></tr></table></figure>
+
+<p>当<code>error</code>趋近于最小值时，也就是<code>f(x) = 0</code>处<code>x</code>的解，我们也可以通过图来观察：</p>
+<img src="https://segmentfault.com/img/bVYurg?w=800&amp;h=800" alt="clipboard.png" style="zoom:33%;" />
+
+<p>通过这函数图，我们可以非常直观的发现，要想求得该函数的最小值，只要将<code>x</code>指定为函数图的最低谷。这在高中我们就已经掌握了该函数的最小值解法。我们可以通过对该函数进行求导（即斜率）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">derivative(x) &#x3D; 6 * x^5 + 16 * x^3 - 18 * x^2 + 8 * x - 12</span><br></pre></td></tr></table></figure>
+
+<p>如果要得到最小值，只需令<code>derivative(x) = 0</code>，即<code>x = 1</code>。同时我们结合图与导函数可以知道：</p>
+<ul>
+<li>当<code>x &lt; 1</code>时，<code>derivative &lt; 0</code>，斜率为负的；</li>
+<li>当<code>x &gt; 1</code>时，<code>derivative &gt; 0</code>，斜率为正的；</li>
+<li>当<code>x 无限接近 1</code>时，<code>derivative也就无限=0</code>，斜率为零。</li>
+</ul>
+<p>通过上面的结论，我们可以使用如下表达式来代替<code>x</code>在函数中的移动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x &#x3D; x - reate * derivative</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><em>当斜率为负的时候，<code>x</code>增大，当斜率为正的时候，<code>x</code>减小；因此<code>x</code>总是会向着低谷移动，使得<code>error</code>最小，从而求得<code>f(x) = 0</code>处的解。其中的<code>rate</code>代表<code>x</code>逆着导数方向移动的距离，<code>rate</code>越大，<code>x</code>每次就移动的越多。反之移动的越少。</em></p>
+</blockquote>
+<p>这是针对简单的函数，我们可以非常直观的求得它的导函数。为了应对复杂的函数，我们可以通过使用求导函数的定义来表达导函数:若函数<code>f(x)</code>在点<code>x0</code>处可导，那么有如下定义：</p>
+<p><img src="https://segmentfault.com/img/bVYuru?w=431&h=54" alt="clipboard.png"></p>
+<p>上面是都是公式推导，下面通过代码来实现，下面的代码都是使用<code>python</code>进行实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def f(x):</span><br><span class="line">...     return x**3 + 2 * x - 3</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; def error(x):</span><br><span class="line">...     return (f(x) - 0)**2</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; def gradient_descent(x):</span><br><span class="line">...     delta &#x3D; 0.00000001</span><br><span class="line">...     derivative &#x3D; (error(x + delta) - error(x)) &#x2F; delta</span><br><span class="line">...     rate &#x3D; 0.01</span><br><span class="line">...     return x - rate * derivative</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; x &#x3D; 0.8</span><br><span class="line">&gt;&gt;&gt; for i in range(50):</span><br><span class="line">...     x &#x3D; gradient_descent(x)</span><br><span class="line">...     print(&#39;x &#x3D; &#123;:6f&#125;, f(x) &#x3D; &#123;:6f&#125;&#39;.format(x, f(x)))</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>执行上面程序，我们就能得到如下结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">x &#x3D; 0.869619, f(x) &#x3D; -0.603123</span><br><span class="line">x &#x3D; 0.921110, f(x) &#x3D; -0.376268</span><br><span class="line">x &#x3D; 0.955316, f(x) &#x3D; -0.217521</span><br><span class="line">x &#x3D; 0.975927, f(x) &#x3D; -0.118638</span><br><span class="line">x &#x3D; 0.987453, f(x) &#x3D; -0.062266</span><br><span class="line">x &#x3D; 0.993586, f(x) &#x3D; -0.031946</span><br><span class="line">x &#x3D; 0.996756, f(x) &#x3D; -0.016187</span><br><span class="line">x &#x3D; 0.998369, f(x) &#x3D; -0.008149</span><br><span class="line">x &#x3D; 0.999182, f(x) &#x3D; -0.004088</span><br><span class="line">x &#x3D; 0.999590, f(x) &#x3D; -0.002048</span><br><span class="line">x &#x3D; 0.999795, f(x) &#x3D; -0.001025</span><br><span class="line">x &#x3D; 0.999897, f(x) &#x3D; -0.000513</span><br><span class="line">x &#x3D; 0.999949, f(x) &#x3D; -0.000256</span><br><span class="line">x &#x3D; 0.999974, f(x) &#x3D; -0.000128</span><br><span class="line">x &#x3D; 0.999987, f(x) &#x3D; -0.000064</span><br><span class="line">x &#x3D; 0.999994, f(x) &#x3D; -0.000032</span><br><span class="line">x &#x3D; 0.999997, f(x) &#x3D; -0.000016</span><br><span class="line">x &#x3D; 0.999998, f(x) &#x3D; -0.000008</span><br><span class="line">x &#x3D; 0.999999, f(x) &#x3D; -0.000004</span><br><span class="line">x &#x3D; 1.000000, f(x) &#x3D; -0.000002</span><br><span class="line">x &#x3D; 1.000000, f(x) &#x3D; -0.000001</span><br><span class="line">x &#x3D; 1.000000, f(x) &#x3D; -0.000001</span><br><span class="line">x &#x3D; 1.000000, f(x) &#x3D; -0.000000</span><br><span class="line">x &#x3D; 1.000000, f(x) &#x3D; -0.000000</span><br><span class="line">x &#x3D; 1.000000, f(x) &#x3D; -0.000000</span><br></pre></td></tr></table></figure>
+
+<p>通过上面的结果，也验证了我们最初的结论。<code>x = 1</code>时，<code>f(x) = 0</code>。<br>所以通过该方法，只要步数足够多，就能得到非常精确的值。</p>
+<h1 id="梯度下降法的今生"><a href="#梯度下降法的今生" class="headerlink" title="梯度下降法的今生"></a>梯度下降法的今生</h1><p>上面是对<code>一维</code>函数进行求解，那么对于<code>多维</code>函数又要如何求呢？我们接着看下面的函数，你会发现对于<code>多维</code>函数也是那么的简单。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f(x) &#x3D; x[0] + 2 * x[1] + 4</span><br></pre></td></tr></table></figure>
+
+<p>同样的如果我们要求<code>f(x) = 0</code>处，<code>x[0]</code>与<code>x[1]</code>的值，也可以通过求<code>error</code>函数的最小值来间接求<code>f(x)</code>的解。跟<code>一维</code>函数唯一不同的是，要分别对<code>x[0]</code>与<code>x[1]</code>进行求导。在数学上叫做<code>偏导数</code>：</p>
+<ul>
+<li>保持x[1]不变，对<code>x[0]</code>进行求导，即<code>f(x)</code>对<code>x[0]</code>的偏导数</li>
+<li>保持x[0]不变，对<code>x[1]</code>进行求导，即<code>f(x)</code>对<code>x[1]</code>的偏导数</li>
+</ul>
+<p>有了上面的理解基础，我们定义的<code>gradient_descent</code>如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def gradient_descent(x):</span><br><span class="line">...     delta &#x3D; 0.00000001</span><br><span class="line">...     derivative_x0 &#x3D; (error([x[0] + delta, x[1]]) - error([x[0], x[1]])) &#x2F; delta</span><br><span class="line">...     derivative_x1 &#x3D; (error([x[0], x[1] + delta]) - error([x[0], x[1]])) &#x2F; delta</span><br><span class="line">...     rate &#x3D; 0.01</span><br><span class="line">...     x[0] &#x3D; x[0] - rate * derivative_x0</span><br><span class="line">...     x[1] &#x3D; x[1] - rate * derivative_x1</span><br><span class="line">...     return [x[0], x[1]]</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p><code>rate</code>的作用不变，唯一的区别就是分别获取最新的<code>x[0]</code>与<code>x[1]</code>。下面是整个代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def f(x):</span><br><span class="line">...     return x[0] + 2 * x[1] + 4</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; def error(x):</span><br><span class="line">...     return (f(x) - 0)**2</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; def gradient_descent(x):</span><br><span class="line">...     delta &#x3D; 0.00000001</span><br><span class="line">...     derivative_x0 &#x3D; (error([x[0] + delta, x[1]]) - error([x[0], x[1]])) &#x2F; delta</span><br><span class="line">...     derivative_x1 &#x3D; (error([x[0], x[1] + delta]) - error([x[0], x[1]])) &#x2F; delta</span><br><span class="line">...     rate &#x3D; 0.02</span><br><span class="line">...     x[0] &#x3D; x[0] - rate * derivative_x0</span><br><span class="line">...     x[1] &#x3D; x[1] - rate * derivative_x1</span><br><span class="line">...     return [x[0], x[1]]</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; x &#x3D; [-0.5, -1.0]</span><br><span class="line">&gt;&gt;&gt; for i in range(100):</span><br><span class="line">...     x &#x3D; gradient_descent(x)</span><br><span class="line">...     print(&#39;x &#x3D; &#123;:6f&#125;,&#123;:6f&#125;, f(x) &#x3D; &#123;:6f&#125;&#39;.format(x[0],x[1],f(x)))</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>输出结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">x &#x3D; -0.560000,-1.120000, f(x) &#x3D; 1.200000</span><br><span class="line">x &#x3D; -0.608000,-1.216000, f(x) &#x3D; 0.960000</span><br><span class="line">x &#x3D; -0.646400,-1.292800, f(x) &#x3D; 0.768000</span><br><span class="line">x &#x3D; -0.677120,-1.354240, f(x) &#x3D; 0.614400</span><br><span class="line">x &#x3D; -0.701696,-1.403392, f(x) &#x3D; 0.491520</span><br><span class="line">x &#x3D; -0.721357,-1.442714, f(x) &#x3D; 0.393216</span><br><span class="line">x &#x3D; -0.737085,-1.474171, f(x) &#x3D; 0.314573</span><br><span class="line">x &#x3D; -0.749668,-1.499337, f(x) &#x3D; 0.251658</span><br><span class="line">x &#x3D; -0.759735,-1.519469, f(x) &#x3D; 0.201327</span><br><span class="line">x &#x3D; -0.767788,-1.535575, f(x) &#x3D; 0.161061</span><br><span class="line">x &#x3D; -0.774230,-1.548460, f(x) &#x3D; 0.128849</span><br><span class="line">x &#x3D; -0.779384,-1.558768, f(x) &#x3D; 0.103079</span><br><span class="line">x &#x3D; -0.783507,-1.567015, f(x) &#x3D; 0.082463</span><br><span class="line">x &#x3D; -0.786806,-1.573612, f(x) &#x3D; 0.065971</span><br><span class="line">x &#x3D; -0.789445,-1.578889, f(x) &#x3D; 0.052777</span><br><span class="line">x &#x3D; -0.791556,-1.583112, f(x) &#x3D; 0.042221</span><br><span class="line">x &#x3D; -0.793245,-1.586489, f(x) &#x3D; 0.033777</span><br><span class="line">x &#x3D; -0.794596,-1.589191, f(x) &#x3D; 0.027022</span><br><span class="line">x &#x3D; -0.795677,-1.591353, f(x) &#x3D; 0.021617</span><br><span class="line">x &#x3D; -0.796541,-1.593082, f(x) &#x3D; 0.017294</span><br><span class="line">x &#x3D; -0.797233,-1.594466, f(x) &#x3D; 0.013835</span><br><span class="line">x &#x3D; -0.797786,-1.595573, f(x) &#x3D; 0.011068</span><br><span class="line">x &#x3D; -0.798229,-1.596458, f(x) &#x3D; 0.008854</span><br><span class="line">x &#x3D; -0.798583,-1.597167, f(x) &#x3D; 0.007084</span><br><span class="line">x &#x3D; -0.798867,-1.597733, f(x) &#x3D; 0.005667</span><br><span class="line">x &#x3D; -0.799093,-1.598187, f(x) &#x3D; 0.004533</span><br><span class="line">x &#x3D; -0.799275,-1.598549, f(x) &#x3D; 0.003627</span><br><span class="line">x &#x3D; -0.799420,-1.598839, f(x) &#x3D; 0.002901</span><br><span class="line">x &#x3D; -0.799536,-1.599072, f(x) &#x3D; 0.002321</span><br><span class="line">x &#x3D; -0.799629,-1.599257, f(x) &#x3D; 0.001857</span><br><span class="line">x &#x3D; -0.799703,-1.599406, f(x) &#x3D; 0.001486</span><br><span class="line">x &#x3D; -0.799762,-1.599525, f(x) &#x3D; 0.001188</span><br><span class="line">x &#x3D; -0.799810,-1.599620, f(x) &#x3D; 0.000951</span><br><span class="line">x &#x3D; -0.799848,-1.599696, f(x) &#x3D; 0.000761</span><br><span class="line">x &#x3D; -0.799878,-1.599757, f(x) &#x3D; 0.000608</span><br><span class="line">x &#x3D; -0.799903,-1.599805, f(x) &#x3D; 0.000487</span><br><span class="line">x &#x3D; -0.799922,-1.599844, f(x) &#x3D; 0.000389</span><br><span class="line">x &#x3D; -0.799938,-1.599875, f(x) &#x3D; 0.000312</span><br><span class="line">x &#x3D; -0.799950,-1.599900, f(x) &#x3D; 0.000249</span><br><span class="line">x &#x3D; -0.799960,-1.599920, f(x) &#x3D; 0.000199</span><br><span class="line">x &#x3D; -0.799968,-1.599936, f(x) &#x3D; 0.000159</span><br><span class="line">x &#x3D; -0.799974,-1.599949, f(x) &#x3D; 0.000128</span><br><span class="line">x &#x3D; -0.799980,-1.599959, f(x) &#x3D; 0.000102</span><br><span class="line">x &#x3D; -0.799984,-1.599967, f(x) &#x3D; 0.000082</span><br><span class="line">x &#x3D; -0.799987,-1.599974, f(x) &#x3D; 0.000065</span><br><span class="line">x &#x3D; -0.799990,-1.599979, f(x) &#x3D; 0.000052</span><br><span class="line">x &#x3D; -0.799992,-1.599983, f(x) &#x3D; 0.000042</span><br><span class="line">x &#x3D; -0.799993,-1.599987, f(x) &#x3D; 0.000033</span><br><span class="line">x &#x3D; -0.799995,-1.599989, f(x) &#x3D; 0.000027</span><br><span class="line">x &#x3D; -0.799996,-1.599991, f(x) &#x3D; 0.000021</span><br><span class="line">x &#x3D; -0.799997,-1.599993, f(x) &#x3D; 0.000017</span><br><span class="line">x &#x3D; -0.799997,-1.599995, f(x) &#x3D; 0.000014</span><br><span class="line">x &#x3D; -0.799998,-1.599996, f(x) &#x3D; 0.000011</span><br><span class="line">x &#x3D; -0.799998,-1.599997, f(x) &#x3D; 0.000009</span><br><span class="line">x &#x3D; -0.799999,-1.599997, f(x) &#x3D; 0.000007</span><br><span class="line">x &#x3D; -0.799999,-1.599998, f(x) &#x3D; 0.000006</span><br><span class="line">x &#x3D; -0.799999,-1.599998, f(x) &#x3D; 0.000004</span><br><span class="line">x &#x3D; -0.799999,-1.599999, f(x) &#x3D; 0.000004</span><br><span class="line">x &#x3D; -0.799999,-1.599999, f(x) &#x3D; 0.000003</span><br><span class="line">x &#x3D; -0.800000,-1.599999, f(x) &#x3D; 0.000002</span><br><span class="line">x &#x3D; -0.800000,-1.599999, f(x) &#x3D; 0.000002</span><br><span class="line">x &#x3D; -0.800000,-1.599999, f(x) &#x3D; 0.000001</span><br><span class="line">x &#x3D; -0.800000,-1.600000, f(x) &#x3D; 0.000001</span><br><span class="line">x &#x3D; -0.800000,-1.600000, f(x) &#x3D; 0.000001</span><br><span class="line">x &#x3D; -0.800000,-1.600000, f(x) &#x3D; 0.000001</span><br><span class="line">x &#x3D; -0.800000,-1.600000, f(x) &#x3D; 0.000001</span><br><span class="line">x &#x3D; -0.800000,-1.600000, f(x) &#x3D; 0.000000</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>细心的你可能会发现，<code>f(x) = 0</code>不止这一个解还可以是<code>x = -2, -1</code>。这是因为梯度下降法只是对<code>当前所处的凹谷</code>进行梯度下降求解，对于<code>error</code>函数并不代表只有一个<code>f(x) = 0</code>的凹谷。所以梯度下降法只能求得局部解，但不一定能求得全部的解。当然如果对于非常复杂的函数，能够求得局部解也是非常不错的。</p>
+</blockquote>
+<h1 id="tensorflow中的运用"><a href="#tensorflow中的运用" class="headerlink" title="tensorflow中的运用"></a>tensorflow中的运用</h1><p>通过上面的示例，相信对<code>梯度下降</code>也有了一个基本的认识。现在我们回到最开始的地方，在<code>tensorflow</code>中使用<code>gradientDescent</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import tensorflow as tf</span><br><span class="line"> </span><br><span class="line"># Model parameters</span><br><span class="line">W &#x3D; tf.Variable([.3], dtype&#x3D;tf.float32)</span><br><span class="line">b &#x3D; tf.Variable([-.3], dtype&#x3D;tf.float32)</span><br><span class="line"># Model input and output</span><br><span class="line">x &#x3D; tf.placeholder(tf.float32)</span><br><span class="line">linear_model &#x3D; W*x + b</span><br><span class="line">y &#x3D; tf.placeholder(tf.float32)</span><br><span class="line"> </span><br><span class="line"># loss</span><br><span class="line">loss &#x3D; tf.reduce_sum(tf.square(linear_model - y)) # sum of the squares</span><br><span class="line"># optimizer</span><br><span class="line">optimizer &#x3D; tf.train.GradientDescentOptimizer(0.01)</span><br><span class="line">train &#x3D; optimizer.minimize(loss)</span><br><span class="line"> </span><br><span class="line"># training data</span><br><span class="line">x_train &#x3D; [1, 2, 3, 4]</span><br><span class="line">y_train &#x3D; [0, -1, -2, -3]</span><br><span class="line"># training loop</span><br><span class="line">init &#x3D; tf.global_variables_initializer()</span><br><span class="line">sess &#x3D; tf.Session()</span><br><span class="line">sess.run(init) # reset values to wrong</span><br><span class="line">for i in range(1000):</span><br><span class="line">  sess.run(train, &#123;x: x_train, y: y_train&#125;)</span><br><span class="line"> </span><br><span class="line"># evaluate training accuracy</span><br><span class="line">curr_W, curr_b, curr_loss &#x3D; sess.run([W, b, loss], &#123;x: x_train, y: y_train&#125;)</span><br><span class="line">print(&quot;W: %s b: %s loss: %s&quot;%(curr_W, curr_b, curr_loss))</span><br></pre></td></tr></table></figure>
+
+<p>上面的是<a href="https://www.tensorflow.org/get_started/get_started" target="_blank" rel="noopener">tensorflow</a>的官网示例，上面代码定义了函数<code>linear_model = W * x + b</code>,其中的<code>error</code>函数为<code>linear_model - y</code>。目的是对一组<code>x_train</code>与<code>y_train</code>进行简单的训练求解<code>W</code>与<code>b</code>。为了求得这一组数据的最优解，将每一组的<code>error</code>相加从而得到<code>loss</code>，最后再对<code>loss</code>进行梯度下降求解最优值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">optimizer &#x3D; tf.train.GradientDescentOptimizer(0.01)</span><br><span class="line">train &#x3D; optimizer.minimize(loss)</span><br></pre></td></tr></table></figure>
+
+<p>在这里<code>rate</code>为<code>0.01</code>,因为这个示例也是<code>多维</code>函数，所以也要用到<code>偏导数</code>来进行逐步向最优解靠近。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for i in range(1000):</span><br><span class="line">  sess.run(train, &#123;x: x_train, y: y_train&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>最后使用<code>梯度下降</code>进行循环推导，下面给出一些推导过程中的相关结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">W: [-0.21999997] b: [-0.456] loss: 4.01814</span><br><span class="line">W: [-0.39679998] b: [-0.49552] loss: 1.81987</span><br><span class="line">W: [-0.45961601] b: [-0.4965184] loss: 1.54482</span><br><span class="line">W: [-0.48454273] b: [-0.48487374] loss: 1.48251</span><br><span class="line">W: [-0.49684232] b: [-0.46917531] loss: 1.4444</span><br><span class="line">W: [-0.50490189] b: [-0.45227283] loss: 1.4097</span><br><span class="line">W: [-0.5115062] b: [-0.43511063] loss: 1.3761</span><br><span class="line">....</span><br><span class="line">....</span><br><span class="line">....</span><br><span class="line">W: [-0.99999678] b: [ 0.99999058] loss: 5.84635e-11</span><br><span class="line">W: [-0.99999684] b: [ 0.9999907] loss: 5.77707e-11</span><br><span class="line">W: [-0.9999969] b: [ 0.99999082] loss: 5.69997e-11</span><br></pre></td></tr></table></figure>
+
+<p>这里就不推理验证了，如果看了上面的<code>梯度下降</code>的前世今生，相信能够自主的推导出来。那么我们直接看最后的结果，可以估算为<code>W = -1.0</code>与<code>b = 1.0</code>，将他们带入上面的<code>loss</code>得到的结果为<code>0.0</code>，即误差损失值最小，所以<code>W = -1.0</code>与<code>b = 1.0</code>就是<code>x_train</code>与<code>y_train</code>这组数据的最优解。</p>
+<p>好了，关于<code>梯度下降</code>的内容就到这了，希望能够帮助到你；如有不足之处欢迎来讨论，如果感觉这篇文章不错的话，可以关注<a href="https://idisfkj.github.io/archives/" target="_blank" rel="noopener">我的博客</a>，或者扫描下方二维码关注：怪谈时间到了 公众号，查看我的其它文章。</p>
+<p><a href="https://idisfkj.github.io/archives/" target="_blank" rel="noopener">博客地址</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/02/tensorflow-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D,%E6%9C%89%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E8%B6%B3%E5%A4%9F%E4%BA%86/" data-id="ckaxrnx42000330v42b67ahj1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/06/02/%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E20200430/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          函数使用说明20200430
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/06/02/BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">BP神经网络学习</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/02/%E5%AE%9E%E7%8E%B0%E4%B8%8E%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/">实现与问题汇总</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/02/%E6%8A%80%E6%9C%AF%E6%8A%80%E8%83%BD/">技术技能</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/02/%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E20200430/">函数使用说明20200430</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/02/tensorflow-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D,%E6%9C%89%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E8%B6%B3%E5%A4%9F%E4%BA%86/">tensorflow-梯度下降,有这一篇就足够了</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/02/BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/">BP神经网络学习</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
